@@ -13,22 +13,25 @@ const categorySlice = createSlice({
     selectCategory: (state, action) => {
       state.selectedCategory = action.payload;
     },
+    resetSelectedCategory: (state) => {
+      state.selectedCategory = '';
+    },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCategories.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchCategories.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.list = action.payload;
-      })
-      .addCase(fetchCategories.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
-      });
+        .addCase(fetchCategories.pending, (state) => {
+          state.status = 'loading';
+        })
+        .addCase(fetchCategories.fulfilled, (state, action) => {
+          state.status = 'succeeded';
+          state.list = action.payload;
+        })
+        .addCase(fetchCategories.rejected, (state, action) => {
+          state.status = 'failed';
+          state.error = action.error.message;
+        });
   },
 });
 
-export const { selectCategory } = categorySlice.actions;
+export const { selectCategory, resetSelectedCategory } = categorySlice.actions;
 export default categorySlice.reducer;
