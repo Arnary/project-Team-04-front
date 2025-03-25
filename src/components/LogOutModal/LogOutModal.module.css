@@ -1,0 +1,50 @@
+.logOutModal {}
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.message {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cancelButton {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #ccc;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancelButton:hover {
+    background-color: #bbb;
+}
+
+.confirmButton {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #d9534f;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirmButton:hover {
+    background-color: #c9302c;
+}

@@ -1,10 +1,89 @@
 .hero {
-  background-color: #050505;
-  color: #ffffff;
+  position: relative;
+  background-color: #050505; /* Dark background per your design */
+  color: #fff;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+/* Top bar with logo on the left, Auth area (Sign In/Up pill + optional Log Out) on the right */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.authArea {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* The two-segment pill container */
+.authToggle {
+  display: inline-flex;
+  border: 2px solid #fff;  /* White border around the entire pill */
+  border-radius: 50px;     /* Oval shape */
+  overflow: hidden;        /* Ensures child buttons don't overflow corners */
+}
+
+/* Left half: white background, black text */
+.signIn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Right half: black background, white text */
+.signUp {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Optional separate Log Out button (outside the pill) */
+.logOutBtn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logOutBtn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Main hero content, centered */
+.heroContent {
+  max-width: 375px;
+  margin: 60px auto 0 auto; /* Center horizontally */
   text-align: center;
-  padding: 140px 0 100px;
-  border-radius: 0 0 20px 20px;
-  margin: 0 8px;
+  padding: 0 16px;
 }
 
 .title {
@@ -13,23 +92,54 @@
   line-height: 1;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  text-align: center;
-  color: #ffffff;
-  max-width: 327px;
-  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .subtitle {
   font-weight: 500;
   font-size: 14px;
-  line-height: 1.42857;
+  line-height: 1.4;
   letter-spacing: -0.02em;
-  color: #ffffff;
-  max-width: 326px;
-  margin: 20px auto 0;
+  margin-bottom: 30px;
+  color: #fff;
 }
 
-.button {
+.addRecipeBtn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.addRecipeBtn:hover {
+  background-color: #ddd;
+}
+
+/* Hero images at the bottom */
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.imageMain {
+  width: 200px;
+  height: auto;
+}
+
+.imageSecondary {
+  width: 180px;
+  height: auto;
+}
+
+.addRecipeBtn {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.42857;
@@ -45,90 +155,34 @@
   margin: 20px auto 0;
 }
 
-.button:hover {
+.addRecipeBtn:hover {
   background-color: #ffffff;
   color: #050505;
 }
 
-.images {
-  width: 100%;
-  max-width: 375px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.imageMain {
-  width: 77px;
-  height: 70px;
-  border-radius: 15px;
-  margin-top: 40px;
-}
-
-.imageSecondary {
-  width: 190px;
-  height: 172px;
-  border-radius: 30px;
-}
-
+/* Example responsive breakpoint */
 @media (min-width: 768px) {
-  .hero {
-    padding: 151px 0 100px;
-    margin: 0 16px;
+  .heroContent {
+    max-width: 700px;
+    margin-top: 100px;
   }
 
   .title {
-    font-size: 70px;
-    line-height: 70px;
-    min-width: 678px;
+    font-size: 48px;
   }
 
   .subtitle {
     font-size: 16px;
-    line-height: 24px;
-    max-width: 577px;
-    margin-top: 40px;
   }
 
-  .button {
+  .addRecipeBtn {
     padding: 16px 32px;
     margin-top: 40px;
   }
 
   .images {
-    max-width: 768px;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 40px;
-  }
-
-  .imageSecondary {
-    width: 302px;
-    height: 273px;
-  }
-
-  .imageMain {
-    margin-top: 60px;
-    width: 128px;
-    height: 116px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .hero {
-    padding: 88px 0 82px;
-    margin: 0 20px;
-  }
-
-  .title {
-    font-size: 90px;
-    line-height: 90px;
-    max-width: 875px;
-  }
-
-  .images {
-    max-width: 1440px;
-  }
-
-  .imageMain {
-    margin-top: 65px;
   }
 }
