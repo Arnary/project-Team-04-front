@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './IngredientsList.module.css';
+import { ReactComponent as XIcon } from '../../img/categories/x.svg';
 
 const IngredientsList = ({ selectedIngredients, removeIngredient }) => {
     if (selectedIngredients.length === 0) return null;
@@ -8,14 +9,14 @@ const IngredientsList = ({ selectedIngredients, removeIngredient }) => {
         <ul className={styles['ingredient-list']}>
             {selectedIngredients.map((ing, index) => (
                 <li key={index} className={styles['ingredient-item']}>
-                    {ing.img && (
+                    <div className={styles['ingredient-image-wrapper']}>
                         <img
                             src={ing.img}
                             alt={ing.name}
                             className={styles['ingredient-image']}
                         />
-                    )}
-                    <div className={styles['ingredient-info']}>
+                    </div>
+                    <div className={styles['ingredient-details']}>
                         <span className={styles['ingredient-name']}>{ing.name}</span>
                         <span className={styles['ingredient-amount']}>{ing.amount}</span>
                     </div>
@@ -25,7 +26,7 @@ const IngredientsList = ({ selectedIngredients, removeIngredient }) => {
                         onClick={() => removeIngredient(index)}
                         aria-label={`Remove ${ing.name}`}
                     >
-                        Remove
+                        <XIcon className={styles['remove-icon']} />
                     </button>
                 </li>
             ))}

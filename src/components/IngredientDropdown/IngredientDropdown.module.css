@@ -1,16 +1,20 @@
 .custom-select-container {
     position: relative;
-    width: 343px;
+    width: 100%;
+    max-width: 343px;
 }
 
 @media (min-width: 768px) {
-    .custom-select-container {
+    .custom-select-container,
+    .custom-select {
         width: 345px;
+        height: 56px;
     }
 }
 
 @media (min-width: 1440px) {
-    .custom-select-container {
+    .custom-select-container,
+    .custom-select {
         width: 330px;
     }
 }
@@ -23,11 +27,14 @@
     border: 1px solid #bfbebe;
     border-radius: 30px;
     padding: 16px 18px;
-    width: 343px;
+    /*width: 343px;*/
     height: 48px;
     background-color: #fff;
     transition: border-color 0.3s ease;
     cursor: pointer;
+
+    width: 100%; /* Make width 100% */
+    max-width: 343px; /* Maintain max-width */
 }
 
 @media (min-width: 768px) {
@@ -132,5 +139,13 @@
     .loading-error-text {
         font-size: 16px;
         line-height: 1.5;
+    }
+}
+
+@media (min-width: 375px) {
+    .custom-select-container,
+    .custom-select {
+        width: 100%;
+        max-width: 343px;
     }
 }

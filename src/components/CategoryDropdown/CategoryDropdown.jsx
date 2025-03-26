@@ -79,12 +79,6 @@ const CategoryDropdown = forwardRef(({ label = "Select a category", placeholder 
                 </ul>
             )}
 
-            {/* Кнопка для скидання вибору */}
-            {selectedCategory && (
-                <button className={css["reset-button"]} onClick={onReset}>
-                    Reset
-                </button>
-            )}
         </div>
     );
 });

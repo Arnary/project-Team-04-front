@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from "./IngredientsSection.module.css";
 import IngredientsList from '../IngredientsList/IngredientsList';
 import IngredientDropdown from '../IngredientDropdown/IngredientDropdown';
+import { ReactComponent as PlusIcon } from '../../img/categories/plus.svg';
 
 const IngredientsSection = ({
                                 control,
@@ -51,6 +52,7 @@ const IngredientsSection = ({
             <div className={styles["ingredients-controls"]}>
                 <IngredientDropdown
                     onSelect={handleIngredientSelect}
+                    selectedIngredient={selectedIngredient}
                 />
 
                 <input
@@ -67,7 +69,7 @@ const IngredientsSection = ({
                     onClick={addIngredient}
                     disabled={!selectedIngredient || !ingredientAmount.trim()}
                 >
-                    Add +
+                    ADD INGREDIENT <PlusIcon className={styles["plus-icon"]} />
                 </button>
             </div>
 
