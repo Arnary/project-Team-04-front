@@ -1,0 +1,105 @@
+.upload-container {
+    width: 100%;
+    min-width: 300px;
+    max-width: 343px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(8px, 3vw, 10px);
+    margin: 0 auto;
+    margin-bottom: clamp(15px, 5vw, 20px);
+}
+
+.upload-container.has-image {
+    padding: 0;
+    border: none;
+}
+
+.image-with-upload {
+    width: 100%;
+    height: clamp(250px, 70vw, 318px);
+    margin-bottom: 10px;
+}
+
+.image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.upload-another-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-label,
+.upload-another-label {
+    color: #050505;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.upload-another-label input[type="file"] {
+    display: none;
+}
+
+/* Original upload styles */
+.upload-label {
+    width: 100%;
+    min-width: 320px;
+    max-width: 343px;
+    height: clamp(250px, 70vw, 318px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(15px, 5vw, 20px);
+    border: 2px dashed #BFBEBE;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.upload-label:hover {
+    border-color: #999;
+    background-color: #f9f9f9;
+}
+
+.upload-icon {
+    width: clamp(48px, 15vw, 64px);
+    height: clamp(48px, 15vw, 64px);
+}
+
+.upload-icon svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 4px;
+}
+
+.upload-container input[type="file"] {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .image-with-upload,
+    .upload-label {
+        height: clamp(250px, 90vw, 318px);
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .image-with-upload,
+    .upload-label {
+        height: 318px;
+    }
+}

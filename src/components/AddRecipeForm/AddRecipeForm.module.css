@@ -1,0 +1,291 @@
+/* ================ BASE STYLES ================ */
+.add-recipe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 375px; /* Фіксована ширина для мобільних */
+    padding: 16px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .add-recipe-form {
+        max-width: 704px; /* або інше значення для планшетів */
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Десктопна версія (1440px і більше) */
+@media (min-width: 1440px) {
+    .add-recipe-form {
+        max-width: 800px; /* або інше значення для десктопів */
+        padding: 32px;
+    }
+}
+
+/* ================ FORM ELEMENTS ================ */
+/* Input Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: clamp(6px, 2vw, 8px);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Text Inputs */
+.text-input {
+    width: 100%;
+    border: none;
+    padding: clamp(6px, 2vw, 8px) 0;
+    font-size: clamp(1rem, 4vw, 1.125rem);
+    outline: none;
+    background: transparent;
+}
+
+.text-input--title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+}
+
+.text-input::placeholder {
+    color: #999;
+    font-weight: bold;
+}
+
+.text-input:focus {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Textareas */
+/*.textarea-container {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    margin-bottom: clamp(15px, 5vw, 20px);*/
+/*}*/
+
+/*.textarea {*/
+/*    width: 100%;*/
+/*    border: none;*/
+/*    border-bottom: 1px solid #ccc;*/
+/*    padding: clamp(6px, 2vw, 8px) 40px clamp(6px, 2vw, 8px) 0;*/
+/*    resize: none;*/
+/*    outline: none;*/
+/*    min-height: clamp(35px, 10vw, 40px);*/
+/*    max-height: 200px;*/
+/*    overflow-y: hidden;*/
+/*    line-height: 1.5;*/
+/*    font-family: inherit;*/
+/*    transition: height 0.2s;*/
+/*    box-sizing: border-box;*/
+/*    font-size: clamp(1rem, 4vw, 1.125rem);*/
+/*}*/
+
+/*.textarea:focus {*/
+/*    border-bottom-color: #000;*/
+/*}*/
+
+/*.char-count {*/
+/*    position: absolute;*/
+/*    right: 0;*/
+/*    top: 8px;*/
+/*    font-size: clamp(0.7rem, 3vw, 0.8rem);*/
+/*    color: #666;*/
+/*    background-color: white;*/
+/*    padding-left: 5px;*/
+/*}*/
+
+/* ================ DROPDOWNS ================ */
+/*.dropdown-label {*/
+/*    display: block;*/
+/*    margin-bottom: 8px;*/
+/*    font-weight: 600;*/
+/*    color: #333;*/
+/*    text-transform: uppercase;*/
+/*    font-size: clamp(0.8rem, 3vw, 0.9rem);*/
+/*}*/
+
+/*.dropdown-select {*/
+/*    width: 100%;*/
+/*    padding: clamp(10px, 3vw, 12px) clamp(12px, 4vw, 16px);*/
+/*    border: 1px solid #e0e0e0;*/
+/*    border-radius: 8px;*/
+/*    background-color: white;*/
+/*    font-size: clamp(0.9rem, 4vw, 1rem);*/
+/*    appearance: none;*/
+/*    -webkit-appearance: none;*/
+/*    -moz-appearance: none;*/
+/*    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: right 16px center;*/
+/*    background-size: 16px;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s;*/
+/*}*/
+
+/*.dropdown-select:focus {*/
+/*    outline: none;*/
+/*    border-color: #666;*/
+/*    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+
+/* ================ INGREDIENTS ================ */
+.ingredients-section {
+    margin-top: clamp(12px, 4vw, 15px);
+}
+
+.ingredients-row {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 3vw, 15px);
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+    margin: clamp(8px, 3vw, 10px) 0;
+}
+
+.ingredient-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(8px, 3vw, 10px);
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: clamp(8px, 3vw, 10px);
+    margin-bottom: 5px;
+}
+
+.ingredient-item img {
+    width: clamp(35px, 10vw, 40px);
+    height: clamp(35px, 10vw, 40px);
+    border-radius: 5px;
+}
+
+.remove-ingredient {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.remove-ingredient:hover {
+    background-color: #cc0000;
+}
+
+/* ================ FORM BUTTONS ================ */
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 3vw, 15px);
+    width: 100%;
+    margin-top: clamp(15px, 5vw, 20px);
+}
+
+.btn {
+    width: 100%;
+    padding: clamp(10px, 4vw, 12px) clamp(15px, 5vw, 20px);
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(6px, 2vw, 8px);
+}
+
+.btn--clear {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+}
+
+.btn--clear:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+}
+
+.btn--submit {
+    background-color: #1a1a1a;
+    color: white;
+    font-weight: 500;
+}
+
+.btn--submit:hover {
+    background-color: #363636;
+}
+
+.btn-icon {
+    width: clamp(14px, 4vw, 16px);
+    height: clamp(14px, 4vw, 16px);
+}
+
+/* ================ ERROR STATES ================ */
+.error-message {
+    color: red;
+    font-size: clamp(0.7rem, 3vw, 0.8rem);
+    margin-top: 4px;
+}
+
+.has-error {
+    border-color: red;
+}
+
+/* ================ LAYOUT HELPERS ================ */
+.flex-row {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 5vw, 20px);
+    width: 100%;
+}
+
+/* Media Queries for Adaptive Design */
+@media screen and (min-width: 375px) {
+    .ingredients-row {
+        flex-direction: row;
+    }
+
+    .ingredient-item {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .form-buttons {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .btn {
+        width: auto;
+    }
+
+    .flex-row {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .flex-row > * {
+        flex: 1;
+    }
+}

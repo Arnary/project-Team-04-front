@@ -1,0 +1,143 @@
+/* IngredientsList.module.css */
+
+.ingredient-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+}
+
+.ingredient-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ingredient-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.ingredient-info {
+    text-align: center;
+    width: 100%;
+}
+
+.ingredient-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.ingredient-amount {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.remove-button {
+    padding: 4px 12px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.remove-button:hover {
+    background-color: #cc0000;
+}
+
+/* Адаптивні стилі для малих екранів */
+@media (max-width: 480px) {
+    .ingredient-list {
+        grid-template-columns: 1fr;
+    }
+
+    .ingredient-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 12px;
+    }
+
+    .ingredient-image {
+        margin-bottom: 0;
+        width: 36px;
+        height: 36px;
+    }
+
+    .ingredient-info {
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    .ingredient-name,
+    .ingredient-amount {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .ingredient-name {
+        font-size: 15px;
+    }
+
+    .ingredient-amount {
+        font-size: 14px;
+    }
+
+    .remove-button {
+        margin-left: auto;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Стилі для планшетів */
+@media (min-width: 768px) {
+    .ingredient-list {
+        gap: 16px;
+    }
+
+    .ingredient-item {
+        padding: 14px;
+    }
+
+    .ingredient-image {
+        width: 44px;
+        height: 44px;
+    }
+
+    .ingredient-name {
+        font-size: 15px;
+    }
+
+    .ingredient-amount {
+        font-size: 14px;
+    }
+
+    .remove-button {
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+}
