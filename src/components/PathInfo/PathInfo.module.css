@@ -1,0 +1,25 @@
+.path-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.path-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.path-link:hover {
+    text-decoration: underline;
+}
+
+.path-separator {
+    margin: 0 8px;
+}
+
+.current-page {
+    color: #333;
+    font-weight: 700;
+}
