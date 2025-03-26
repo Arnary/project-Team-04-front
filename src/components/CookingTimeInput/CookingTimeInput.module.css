@@ -1,4 +1,3 @@
-/* Контейнер для всього блоку */
 .cooking-time-container {
     display: flex;
     flex-direction: column;
@@ -7,7 +6,6 @@
     align-items: flex-start;
 }
 
-/* Заголовок "COOKING TIME (MIN)" */
 .dropdown-label {
     font-size: 16px;
     font-weight: 800;
@@ -15,35 +13,31 @@
     margin-bottom: 8px;
 }
 
-/* Обгортка для кнопок і поля */
 .time-input-wrapper {
     display: flex;
     align-items: center;
-    gap: 8px;
-    width: auto; /* Змінюємо з 100% на auto */
-    max-width: 100%; /* Додаємо обмеження */
+    width: auto;
+    max-width: 100%;
 }
 
 .time-control-group {
     display: flex;
     align-items: center;
-    gap: 8px;
     width: auto;
 }
 
-/* Кнопки "-" та "+" (тепер у вигляді input) */
 .time-button {
     width: 48px;
     height: 48px;
     border: 1px solid #BFBEBE;
-    border-radius: 50%; /* Робимо ідеально круглі кнопки */
+    border-radius: 50%;
     background-color: #fff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    flex-shrink: 0; /* Забороняємо стискання */
+    flex-shrink: 0;
 }
 
 .time-button:hover {
@@ -55,7 +49,6 @@
     height: 20px;
 }
 
-/* Поле вводу числа */
 .time-input {
     width: 60px;
     height: 48px;
@@ -67,24 +60,22 @@
     background-color: #fff;
 }
 
-/* ==== Кастомний дропдаун (аналогічний CategoryDropdown) ==== */
 .custom-select {
     position: relative;
     display: flex;
-    justify-content: flex-start; /* Змінюємо на вирівнювання вліво */
+    justify-content: flex-start;
     align-items: center;
-    width: 100%; /* Робимо на всю ширину */
-    min-width: 60px; /* Мінімальна ширина */
+    width: 100%;
+    min-width: 60px;
     height: 48px;
     border-radius: 8px;
     background-color: #fff;
     cursor: pointer;
-    text-align: left; /* Текст вирівнюємо вліво */
-    padding: 10px 16px; /* Додаємо паддинги зліва */
-    border: 1px solid #ccc; /* Додаємо рамку для кращого вигляду */
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid #BFBEBE;
 }
 
-/* Видалено рамку */
 .custom-select {
     border: none;
 }
@@ -99,18 +90,16 @@
     color: #BFBEBE;
 }
 
-/* Випадаючий список */
 .custom-options {
     position: absolute;
     top: 100%;
-    left: 0; /* Змінюємо з центрування на лівий край */
-    transform: none; /* Видаляємо трансформацію */
-    width: 100%;
+    left: -48px;
+    width: 323px;
     background: #fff;
     border-radius: 15px;
     border: 1px solid #ccc;
     margin-top: 2px;
-    padding: 12px 0; /* Вертикальний паддинг */
+    padding: 12px 0;
     font-weight: 500;
     font-size: 14px;
     color: #050505;
@@ -118,11 +107,11 @@
     overflow-y: auto;
     scrollbar-width: none;
     z-index: 100;
-    text-align: left; /* Вирівнювання тексту зліва */
+    text-align: left;
 }
 
 .custom-options li {
-    padding: 8px 18px; /* Горизонтальний паддинг 18px */
+    padding: 8px 18px;
     transition: background 0.3s;
     cursor: pointer;
     border-radius: 8px;
@@ -134,7 +123,6 @@
     background-color: #f0f0f0;
 }
 
-/* Адаптивність */
 @media (min-width: 768px) {
     .cooking-time-container {
         max-width: 280px;
@@ -161,10 +149,9 @@
     }
 
     .time-input {
-        width: 100%; /* Робимо на всю доступну ширину */
-        max-width: 80px; /* Але обмежуємо максимальну ширину */
-        /* Інші стилі залишаються без змін */
-        text-align: left; /* Текст вирівнюємо вліво */
-        padding-left: 12px; /* Додаємо паддинг зліва */
+        width: 100%;
+        max-width: 80px;
+        text-align: left;
+        padding-left: 12px;
     }
 }

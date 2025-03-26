@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from "../AddRecipeForm/AddRecipeForm.module.css";
-import { ReactComponent as TrashIcon } from '../../img/categories/trashBin.svg';
+import React, { useState } from 'react';
+import styles from "./FormButtons.module.css";
+import { ReactComponent as TrashIcon } from '../../img/categories/trash.svg';
 
 const FormButtons = ({
                          reset,
@@ -8,6 +8,9 @@ const FormButtons = ({
                          setSelectedIngredients,
                          setSelectedIngredient
                      }) => {
+    const [isClearPressed, setIsClearPressed] = useState(false);
+    const [isPublishPressed, setIsPublishPressed] = useState(false);
+
     const handleReset = () => {
         reset();
         setImagePreview(null);
@@ -19,17 +22,32 @@ const FormButtons = ({
         <div className={styles["form-buttons"]}>
             <button
                 type="reset"
-                onClick={handleReset}
-                className={styles["btn"]}
+                onClick={(e) => {
+                    handleReset();
+                    setIsClearPressed(true);
+                    setTimeout(() => setIsClearPressed(false), 200);
+                }}
+                className={`
+                    ${styles["btn"]} 
+                    ${styles["btn--clear"]} 
+                    ${isClearPressed ? styles["btn--pressed"] : ''}
+                `}
             >
                 <TrashIcon className={styles["btn-icon"]} />
-                Clear
             </button>
             <button
                 type="submit"
-                className={`${styles["btn"]} ${styles["btn--submit"]}`}
+                onClick={(e) => {
+                    setIsPublishPressed(true);
+                    setTimeout(() => setIsPublishPressed(false), 200);
+                }}
+                className={`
+                    ${styles["btn"]} 
+                    ${styles["btn--publish"]} 
+                    ${isPublishPressed ? styles["btn--pressed"] : ''}
+                `}
             >
-                Publish
+                PUBLISH
             </button>
         </div>
     );

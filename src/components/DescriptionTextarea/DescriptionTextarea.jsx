@@ -1,29 +1,29 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./DescriptionTextarea.module.css";
 
-const DescriptionTextarea = ({ register, errors, watch, setValue }) => {
+const DescriptionTextarea = ({ name, label, placeholder, register, errors, watch, setValue }) => {
     const textareaRef = useRef(null);
-    const description = watch("description");
+    const value = watch(name);
 
     useEffect(() => {
         const textarea = textareaRef.current;
         if (textarea) {
-            textarea.style.height = "auto"; // Скидаємо висоту перед підрахунком
-            textarea.style.height = `${textarea.scrollHeight}px`; // Встановлюємо нову висоту
+            textarea.style.height = "auto";
+            textarea.style.height = `${textarea.scrollHeight}px`;
         }
-    }, [description]); // Виконується щоразу при зміні значення
+    }, [value]);
 
     return (
         <div className={styles["textarea-container"]}>
+            {label && <label className={styles["textarea-label"]}>{label}</label>}
+
             <textarea
                 ref={textareaRef}
                 className={styles.textarea}
-                {...register("description")}
-                placeholder="Enter a description of the dish"
+                {...register(name)}
+                placeholder={placeholder}
                 maxLength={200}
-                onChange={(e) => {
-                    setValue("description", e.target.value.slice(0, 200));
-                }}
+                onChange={(e) => setValue(name, e.target.value.slice(0, 200))}
                 rows="1"
                 style={{
                     resize: "none",
@@ -34,12 +34,11 @@ const DescriptionTextarea = ({ register, errors, watch, setValue }) => {
                     outline: "none",
                 }}
             />
-            {/* Лічильник символів тепер у верхньому правому куті */}
             <div className={styles["char-count"]}>
-                <span className={styles["char-counter"]}>{description?.length || 0}</span>/200
+                <span className={styles["char-counter"]}>{value?.length || 0}</span>/200
             </div>
-            {errors.description && (
-                <p className={styles["error-message"]}>{errors.description.message}</p>
+            {errors[name] && (
+                <p className={styles["error-message"]}>{errors[name].message}</p>
             )}
         </div>
     );

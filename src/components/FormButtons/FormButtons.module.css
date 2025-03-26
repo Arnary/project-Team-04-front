@@ -1,0 +1,57 @@
+.form-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 64px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn--clear {
+    border: 1px solid #BFBEBE;
+    background-color: white;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+}
+
+.btn--publish {
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #1A1A1A;
+    color: white;
+    border-radius: 30px;
+    padding: 14px 24px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn--pressed {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn--publish:hover {
+    background-color: #050505;
+    border-color: #050505;
+}
+
+.btn--clear:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    /*color: #BFBEBE;*/
+}

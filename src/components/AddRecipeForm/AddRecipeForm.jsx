@@ -6,7 +6,6 @@ import styles from "./AddRecipeForm.module.css";
 import { useDispatch } from 'react-redux';
 import { selectCategory, resetSelectedCategory } from '../../redux/categories/categorySlice';
 
-// Компоненти
 import ImageUploader from '../ImageUploader/ImageUploader';
 import CookingTimeInput from '../CookingTimeInput/CookingTimeInput';
 import IngredientsSection from '../IngredientsSection/IngredientsSection';
@@ -118,6 +117,8 @@ const AddRecipeForm = () => {
             />
 
             <DescriptionTextarea
+                name="description"
+                placeholder="Enter a description of the dish"
                 register={register}
                 errors={errors}
                 watch={watch}
@@ -145,6 +146,19 @@ const AddRecipeForm = () => {
                 ingredientsList={ingredientsList}
                 selectedIngredients={selectedIngredients}
                 setSelectedIngredients={setSelectedIngredients}
+                setValue={setValue}
+            />
+
+            <div className={styles["label-wrapper"]}>
+                <label className={styles["textarea-label"]}>RECIPE PREPARATION</label>
+            </div>
+
+            <DescriptionTextarea
+                name="instructions"
+                placeholder="Enter recipe"
+                register={register}
+                errors={errors}
+                watch={watch}
                 setValue={setValue}
             />
 

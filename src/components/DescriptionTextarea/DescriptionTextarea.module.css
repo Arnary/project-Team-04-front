@@ -2,6 +2,16 @@
     position: relative;
     width: 100%;
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.textarea-label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 8px;
 }
 
 .char-count {
@@ -26,4 +36,10 @@
     box-sizing: border-box;
     overflow-y: hidden;
     min-height: 40px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
 }

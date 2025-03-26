@@ -6,7 +6,7 @@
     gap: 20px;
     width: 100%;
     min-width: 320px;
-    max-width: 375px; /* Фіксована ширина для мобільних */
+    max-width: 375px;
     padding: 16px;
     margin: 0 auto;
     background-color: #ffffff;
@@ -15,17 +15,17 @@
 
 @media (min-width: 768px) {
     .add-recipe-form {
-        max-width: 704px; /* або інше значення для планшетів */
+        max-width: 704px;
         padding: 24px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 }
 
-/* Десктопна версія (1440px і більше) */
+
 @media (min-width: 1440px) {
     .add-recipe-form {
-        max-width: 800px; /* або інше значення для десктопів */
+        max-width: 800px;
         padding: 32px;
     }
 }
@@ -66,55 +66,6 @@
 
 .text-input:focus {
     border-bottom: 1px solid #ccc;
-}
-
-/* ================ FORM BUTTONS ================ */
-.form-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(10px, 3vw, 15px);
-    width: 100%;
-    margin-top: clamp(15px, 5vw, 20px);
-}
-
-.btn {
-    width: 100%;
-    padding: clamp(10px, 4vw, 12px) clamp(15px, 5vw, 20px);
-    font-size: clamp(0.9rem, 4vw, 1rem);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(6px, 2vw, 8px);
-}
-
-.btn--clear {
-    background-color: transparent;
-    color: #666;
-    border: 1px solid #ccc;
-}
-
-.btn--clear:hover {
-    background-color: #f5f5f5;
-    border-color: #999;
-}
-
-.btn--submit {
-    background-color: #1a1a1a;
-    color: white;
-    font-weight: 500;
-}
-
-.btn--submit:hover {
-    background-color: #363636;
-}
-
-.btn-icon {
-    width: clamp(14px, 4vw, 16px);
-    height: clamp(14px, 4vw, 16px);
 }
 
 /* ================ ERROR STATES ================ */
@@ -165,4 +116,18 @@
     .flex-row > * {
         flex: 1;
     }
+}
+
+.label-wrapper {
+    width: 100%;
+    text-align: left;
+    margin-top: 64px;
+    margin-bottom: 32px;
+}
+
+
+.textarea-label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #050505;
 }
