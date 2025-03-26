@@ -30,7 +30,7 @@ const DescriptionTextarea = ({ name, label, placeholder, register, errors, watch
                     overflow: "hidden",
                     minHeight: "40px",
                     border: "none",
-                    borderBottom: "1px solid #ccc",
+                    borderBottom: "1px solid #BFBEBE",
                     outline: "none",
                 }}
             />

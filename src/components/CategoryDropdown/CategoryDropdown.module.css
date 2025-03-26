@@ -1,3 +1,4 @@
+/* ----- Base Container Styles ----- */
 .custom-select-container {
     position: relative;
     width: 100%;
@@ -5,27 +6,16 @@
     margin: 0 auto;
 }
 
-@media (min-width: 320px) {
-    .custom-select-container {
-        width: 100%;
-        min-width: 280px;
-    }
+/* ----- Dropdown Label ----- */
+.dropdown-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    color: #050505;
+    margin-bottom: 8px;
 }
 
-@media (min-width: 375px) {
-    .custom-select-container {
-        width: 100%;
-        max-width: 343px;
-    }
-}
-
-@media (min-width: 768px) {
-    .custom-select-container {
-        width: 315px;
-        max-width: 315px;
-    }
-}
-
+/* ----- Main Select Element ----- */
 .custom-select {
     position: relative;
     display: flex;
@@ -41,26 +31,28 @@
     cursor: pointer;
 }
 
-@media (min-width: 320px) {
-    .custom-select {
-        height: 44px;
-        padding: 12px 16px;
-    }
+.custom-select:hover {
+    border-color: #050505;
 }
 
-@media (min-width: 375px) {
-    .custom-select {
-        height: 48px;
-        padding: 16px 18px;
-    }
+/* ----- Text Styles ----- */
+.placeholder-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.42857;
+    letter-spacing: -0.02em;
+    color: #bfbebe;
 }
 
-@media (min-width: 768px) {
-    .custom-select {
-        height: 56px;
-    }
+.selected-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.42857;
+    letter-spacing: -0.02em;
+    color: #050505;
 }
 
+/* ----- Dropdown Arrow Icon ----- */
 .arrow-icon {
     position: absolute;
     width: 16px;
@@ -68,29 +60,10 @@
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    transition: transform 0.3s ease;
 }
 
-@media (min-width: 320px) {
-    .arrow-icon {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-@media (min-width: 375px) {
-    .arrow-icon {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-@media (min-width: 768px) {
-    .arrow-icon {
-        width: 18px;
-        height: 18px;
-    }
-}
-
+/* ----- Dropdown Options List ----- */
 .custom-options {
     position: absolute;
     top: 100%;
@@ -110,83 +83,62 @@
     overflow-y: auto;
     scrollbar-width: none;
     z-index: 100;
-}
-
-@media (min-width: 320px) {
-    .custom-options {
-        max-height: 250px;
-        padding: 12px 16px;
-        font-size: 14px;
-    }
-}
-
-@media (min-width: 375px) {
-    .custom-options {
-        max-height: 286px;
-        padding: 16px 18px;
-        font-size: 14px;
-    }
-}
-
-@media (min-width: 768px) {
-    .custom-options {
-        max-height: 326px;
-        font-size: 16px;
-        line-height: 1.5;
-    }
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .custom-options::-webkit-scrollbar {
     display: none;
 }
 
+/* ----- Dropdown List Items ----- */
 .custom-options li {
     margin-bottom: 6px;
-    transition: background 0.3s;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
-.placeholder-text {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.42857;
-    letter-spacing: -0.02em;
+.custom-options li:hover {
+    background-color: #f5f5f5;
+}
+
+/* ----- Loading/Error States ----- */
+.loading-error-text {
+    padding: 10px;
+    text-align: center;
     color: #bfbebe;
 }
 
-.selected-text {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.42857;
-    letter-spacing: -0.02em;
-    color: #050505;
-}
-
-.dropdown-label {
-    display: block;
-    font-size: 16px;
-    font-weight: 800;
-    color: #050505;
-    margin-bottom: 8px;
-}
-
-@media (min-width: 320px) {
-    .placeholder-text,
-    .selected-text,
-    .loading-error-text {
-        font-size: 14px;
-    }
-}
-
+/* ----- Responsive Breakpoints ----- */
 @media (min-width: 375px) {
-    .placeholder-text,
-    .selected-text,
-    .loading-error-text {
-        font-size: 14px;
+    .custom-select {
+        height: 48px;
+        padding: 16px 18px;
+    }
+
+    .arrow-icon {
+        width: 18px;
+        height: 18px;
     }
 }
 
 @media (min-width: 768px) {
+    .custom-select-container {
+        width: 315px;
+        max-width: 315px;
+    }
+
+    .custom-select {
+        height: 56px;
+    }
+
+    .custom-options {
+        font-size: 16px;
+        line-height: 1.5;
+        max-height: 326px;
+    }
+
     .placeholder-text,
     .selected-text,
     .loading-error-text {
@@ -195,8 +147,8 @@
     }
 }
 
-.loading-error-text {
-    padding: 10px;
-    text-align: center;
-    color: #bfbebe;
+@media (min-width: 1440px) {
+    .custom-select-container {
+        max-width: 400px;
+    }
 }

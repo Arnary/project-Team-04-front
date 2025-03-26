@@ -7,12 +7,10 @@
 
 .path-link {
     text-decoration: none;
-    color: #007bff;
-    font-weight: 600;
-}
-
-.path-link:hover {
-    text-decoration: underline;
+    color: #BFBEBE;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
 }
 
 .path-separator {

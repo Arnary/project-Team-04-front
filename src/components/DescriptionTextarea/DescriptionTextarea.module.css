@@ -1,3 +1,4 @@
+/* ----- Container Styles ----- */
 .textarea-container {
     position: relative;
     width: 100%;
@@ -6,7 +7,7 @@
     flex-direction: column;
 }
 
-
+/* ----- Label Styles ----- */
 .textarea-label {
     font-size: 16px;
     font-weight: 800;
@@ -14,6 +15,29 @@
     margin-bottom: 8px;
 }
 
+/* ----- Textarea Base Styles ----- */
+.textarea {
+    width: 100%;
+    padding-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+    border: none;
+    border-bottom: 1px solid #BFBEBE;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus state for better UX */
+.textarea:focus {
+    border-bottom-color: #050505;
+}
+
+/* ----- Character Counter Styles ----- */
 .char-count {
     position: absolute;
     top: 5px;
@@ -28,18 +52,30 @@
     color: #050505;
 }
 
-.textarea {
-    width: 100%;
-    padding-bottom: 16px;
-    font-size: 14px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    overflow-y: hidden;
-    min-height: 40px;
+/* ----- Error State Styles ----- */
+.textarea-container.error .textarea {
+    border-bottom-color: red;
 }
 
 .error-message {
     color: red;
     font-size: 12px;
     margin-top: 5px;
+}
+
+/* ----- Responsive Adjustments ----- */
+@media screen and (min-width: 768px) {
+    .textarea {
+        font-size: 16px;
+    }
+
+    .textarea-label {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .textarea {
+        padding-bottom: 18px;
+    }
 }

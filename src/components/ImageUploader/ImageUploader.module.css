@@ -1,40 +1,39 @@
+/* ----- Main Upload Container ----- */
 .upload-container {
     width: 100%;
     min-width: 300px;
-    max-width: 343px;
+    max-width: 343px; /* Default max-width for mobile */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(8px, 3vw, 10px);
+    gap: clamp(8px, 3vw, 10px); /* Responsive gap */
     margin: 0 auto;
-    margin-bottom: clamp(15px, 5vw, 20px);
+    margin-bottom: clamp(15px, 5vw, 20px); /* Responsive bottom margin */
 }
 
+/* Modifier when an image is uploaded */
 .upload-container.has-image {
     padding: 0;
     border: none;
 }
 
-.image-with-upload {
+/* ----- Image Preview & Upload Area ----- */
+.image-with-upload,
+.upload-label {
     width: 100%;
-    height: clamp(250px, 70vw, 318px);
-    margin-bottom: 10px;
-}
-
-.image-preview {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: clamp(250px, 70vw, 318px); /* Responsive height (mobile-first) */
     border-radius: 8px;
 }
 
-.upload-another-container {
+/* Image Preview Styling */
+.image-preview {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the container */
+    border-radius: 8px;
 }
 
+/* ----- Upload Button Styles ----- */
 .upload-label,
 .upload-another-label {
     color: #050505;
@@ -47,35 +46,24 @@
     gap: 4px;
 }
 
-.upload-another-label input[type="file"] {
-    display: none;
-}
-
-/* Original upload styles */
+/* Primary Upload Area (No Image) */
 .upload-label {
-    width: 100%;
-    min-width: 320px;
-    max-width: 343px;
-    height: clamp(250px, 70vw, 318px);
-    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: clamp(15px, 5vw, 20px);
     border: 2px dashed #BFBEBE;
     border-radius: 30px;
     text-align: center;
-    cursor: pointer;
     transition: all 0.3s;
 }
 
 .upload-label:hover {
-    border-color: #999;
-    background-color: #f9f9f9;
+    border-color: #BFBEBE;
+    background-color: #ffffff;
 }
 
+/* Camera Icon Styling */
 .upload-icon {
-    width: clamp(48px, 15vw, 64px);
+    width: clamp(48px, 15vw, 64px); /* Responsive icon size */
     height: clamp(48px, 15vw, 64px);
 }
 
@@ -85,21 +73,47 @@
     margin-bottom: 4px;
 }
 
-.upload-container input[type="file"] {
+/* Hide File Inputs */
+.upload-container input[type="file"],
+.upload-another-label input[type="file"] {
     display: none;
 }
 
-/* Responsive adjustments */
-@media screen and (min-width: 320px) and (max-width: 374px) {
+/* "Upload Another" Button Container */
+.upload-another-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----- Responsive Breakpoints ----- */
+/* Mobile (320px - 374px): Adjust height for smaller screens */
+@media screen and (min-width: 320px) {
     .image-with-upload,
     .upload-label {
         height: clamp(250px, 90vw, 318px);
     }
 }
 
+/* Mobile (375px+): Fixed height */
 @media screen and (min-width: 375px) {
     .image-with-upload,
     .upload-label {
         height: 318px;
+    }
+}
+
+/* Tablet (768px+): Slightly wider container */
+@media screen and (min-width: 768px) {
+    .upload-container {
+        max-width: 400px;
+    }
+}
+
+/* Desktop (1440px+): Larger container */
+@media screen and (min-width: 1440px) {
+    .upload-container {
+        max-width: 450px;
     }
 }

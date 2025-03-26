@@ -5,7 +5,7 @@ import styles from "./PathInfo.module.css";
 const PathInfo = ({ currentPage }) => {
     return (
         <nav className={styles["path-container"]}>
-            <Link to="/" className={styles["path-link"]}>Home</Link>
+            <Link to="/" className={styles["path-link"]}>HOME</Link>
             <span className={styles["path-separator"]}>/</span>
             <span className={styles["current-page"]}>{currentPage}</span>
         </nav>
