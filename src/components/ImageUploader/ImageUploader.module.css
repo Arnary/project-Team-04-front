@@ -1,14 +1,13 @@
 /* ----- Main Upload Container ----- */
 .upload-container {
     width: 100%;
-    min-width: 300px;
-    max-width: 343px; /* Default max-width for mobile */
+    min-width: 320px;
+    max-width: 343px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(8px, 3vw, 10px); /* Responsive gap */
-    margin: 0 auto;
-    margin-bottom: clamp(15px, 5vw, 20px); /* Responsive bottom margin */
+    gap: clamp(8px, 3vw, 10px);
+    margin: 0 auto clamp(15px, 5vw, 20px);
 }
 
 /* Modifier when an image is uploaded */
@@ -21,7 +20,7 @@
 .image-with-upload,
 .upload-label {
     width: 100%;
-    height: clamp(250px, 70vw, 318px); /* Responsive height (mobile-first) */
+    height: clamp(250px, 70vw, 318px);
     border-radius: 8px;
 }
 
@@ -29,7 +28,7 @@
 .image-preview {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures images fill the container */
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -63,7 +62,7 @@
 
 /* Camera Icon Styling */
 .upload-icon {
-    width: clamp(48px, 15vw, 64px); /* Responsive icon size */
+    width: clamp(48px, 15vw, 64px);
     height: clamp(48px, 15vw, 64px);
 }
 
@@ -90,6 +89,10 @@
 /* ----- Responsive Breakpoints ----- */
 /* Mobile (320px - 374px): Adjust height for smaller screens */
 @media screen and (min-width: 320px) {
+    .upload-container {
+        max-width: calc(343px + (100vw - 375px) * 0.1);
+    }
+
     .image-with-upload,
     .upload-label {
         height: clamp(250px, 90vw, 318px);
@@ -98,6 +101,10 @@
 
 /* Mobile (375px+): Fixed height */
 @media screen and (min-width: 375px) {
+    .upload-container {
+        max-width: 343px;
+    }
+
     .image-with-upload,
     .upload-label {
         height: 318px;
@@ -106,14 +113,21 @@
 
 /* Tablet (768px+): Slightly wider container */
 @media screen and (min-width: 768px) {
-    .upload-container {
-        max-width: 400px;
+    .upload-container,
+    .upload-container.has-image {
+        min-width: 704px;
+        min-height: 400px;
+    }
+
+    .upload-label,
+    .upload-another-label {
+        font-size: 16px;
     }
 }
 
 /* Desktop (1440px+): Larger container */
 @media screen and (min-width: 1440px) {
     .upload-container {
-        max-width: 450px;
+        /*max-width: 450px;*/
     }
 }

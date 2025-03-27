@@ -5,7 +5,7 @@
     gap: 12px;
     list-style: none;
     padding: 0;
-    margin: 16px 0 0 0;
+    margin: 0;
 }
 
 .ingredient-item {
@@ -78,6 +78,17 @@
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .ingredient-list {
-        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+
+    .ingredient-item {
+        width: 178px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .ingredient-list {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки для десктопної версії */
     }
 }

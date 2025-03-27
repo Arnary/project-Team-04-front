@@ -36,7 +36,6 @@ const CategoryDropdown = forwardRef(({ label = "Select a category", placeholder 
 
     return (
         <div className={css["custom-select-container"]}>
-            {/* Динамічний заголовок */}
             <label className={css["dropdown-label"]}>{label}</label>
 
             <div

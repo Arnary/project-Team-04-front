@@ -1,15 +1,8 @@
 /* ================ BASE STYLES ================ */
-/*body * {*/
-/*    outline: 1px solid red;*/
-/*}*/
-
-
-
-
 .add-recipe-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     width: 100%;
     min-width: 320px;
@@ -22,15 +15,35 @@
 @media (min-width: 768px) {
     .add-recipe-form {
         max-width: 704px;
-        /*padding: 24px;*/
     }
 }
-
 
 @media (min-width: 1440px) {
     .add-recipe-form {
         max-width: 800px;
         padding: 32px;
+    }
+}
+
+/* ================ FORM ROW (Category + Cooking Time) ================ */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .add-recipe-form {
+        gap: 0;
+    }
+    .form-row {
+        flex-direction: row;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .form-row > .form-group {
+        flex: 1;
     }
 }
 
@@ -41,6 +54,7 @@
     flex-direction: column;
     width: 100%;
     gap: clamp(6px, 2vw, 8px);
+    margin-bottom: 20px;
 }
 
 .form-label {
@@ -125,13 +139,12 @@
 .label-wrapper {
     width: 100%;
     text-align: left;
-    margin-top: 64px;
-    margin-bottom: 32px;
+    margin-top: 80px;
+    margin-bottom: 40px;
 }
 
-
 .textarea-label {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 800;
     color: #050505;
 }

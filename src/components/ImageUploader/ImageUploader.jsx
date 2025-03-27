@@ -63,8 +63,9 @@ const ImageUploader = ({ control, errors, setValue, imagePreview, setImagePrevie
                         />
                     </label>
                 )}
+                {errors.image && <p style={{color: 'red', fontSize: '0.8rem', marginTop: '4px'}}>{errors.image.message}</p>}
             </div>
-            {errors.image && <p style={{color: 'red', fontSize: '0.8rem', marginTop: '4px'}}>{errors.image.message}</p>}
+            {/*{errors.image && <p style={{color: 'red', fontSize: '0.8rem', marginTop: '4px'}}>{errors.image.message}</p>}*/}
         </div>
     );
 };

@@ -3,7 +3,6 @@
     position: relative;
     width: 100%;
     max-width: 343px;
-    margin: 0 auto;
 }
 
 /* ----- Dropdown Label ----- */
@@ -129,8 +128,13 @@
         max-width: 315px;
     }
 
+    .dropdown-label {
+        font-size: 20px;
+    }
+
     .custom-select {
         height: 56px;
+        width: 315px;
     }
 
     .custom-options {
@@ -144,6 +148,10 @@
     .loading-error-text {
         font-size: 16px;
         line-height: 1.5;
+    }
+
+    .dropdown-label {
+        margin-bottom: 16px;
     }
 }
 

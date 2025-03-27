@@ -62,7 +62,8 @@
 /* ----- Responsive Adjustments ----- */
 @media (min-width: 768px) {
     .form-buttons {
-        gap: 12px;
+        margin-top: 80px;
+        margin-bottom: 52px;
     }
 
     .btn--publish {

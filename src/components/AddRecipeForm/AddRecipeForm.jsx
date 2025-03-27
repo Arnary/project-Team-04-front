@@ -197,20 +197,25 @@ const AddRecipeForm = () => {
                 setValue={setValue}
             />
 
-            <CategoryDropdown
-                label="CATEGORY"
-                placeholder="Select a category"
-                ref={categoryDropdownRef}
-                onReset={() => {
-                    dispatch(resetSelectedCategory());
-                }}
-            />
-
-            <CookingTimeInput
-                watch={watch}
-                setValue={setValue}
-                errors={errors}
-            />
+            <div className={styles["form-row"]}>
+                <div className={styles["form-group"]}>
+                    <CategoryDropdown
+                        label="CATEGORY"
+                        placeholder="Select a category"
+                        ref={categoryDropdownRef}
+                        onReset={() => {
+                            dispatch(resetSelectedCategory());
+                        }}
+                    />
+                </div>
+                <div className={styles["form-group"]}>
+                    <CookingTimeInput
+                        watch={watch}
+                        setValue={setValue}
+                        errors={errors}
+                    />
+                </div>
+            </div>
 
             <IngredientsSection
                 control={control}

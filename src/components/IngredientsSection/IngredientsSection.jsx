@@ -50,18 +50,20 @@ const IngredientsSection = ({
             <label className={styles["dropdown-label"]}>INGREDIENTS</label>
 
             <div className={styles["ingredients-controls"]}>
-                <IngredientDropdown
-                    onSelect={handleIngredientSelect}
-                    selectedIngredient={selectedIngredient}
-                />
+                <div className={styles["input-row"]}>
+                    <IngredientDropdown
+                        onSelect={handleIngredientSelect}
+                        selectedIngredient={selectedIngredient}
+                    />
 
-                <input
-                    type="text"
-                    className={styles["quantity-input"]}
-                    placeholder="Enter quantity"
-                    value={ingredientAmount}
-                    onChange={(e) => setIngredientAmount(e.target.value)}
-                />
+                    <input
+                        type="text"
+                        className={styles["quantity-input"]}
+                        placeholder="Enter quantity"
+                        value={ingredientAmount}
+                        onChange={(e) => setIngredientAmount(e.target.value)}
+                    />
+                </div>
 
                 <button
                     type="button"

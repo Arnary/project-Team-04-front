@@ -4,19 +4,26 @@
     max-width: 343px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
 /* ----- Section Label ----- */
 .dropdown-label {
     font-size: 16px;
     font-weight: 800;
-    color: #333;
+    color: #050505;
     margin-bottom: 8px;
 }
 
 /* ----- Input Controls Container ----- */
 .ingredients-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* ----- Input Row Container ----- */
+.input-row {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -46,7 +53,8 @@
 
 /* ----- Add Ingredient Button ----- */
 .add-button {
-    margin-top: 26px;
+    margin-top: 20px;
+    margin-bottom: 32px;
     padding: 16px 24px;
     color: #050505;
     background-color: #ffffff;
@@ -92,19 +100,31 @@
     }
 
     .ingredients-controls {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .dropdown-label {
+        font-size: 20px;
+    }
+
+    .input-row {
         flex-direction: row;
         align-items: flex-end;
-        gap: 16px;
+        gap: 19px;
     }
 
     .quantity-input {
-        width: 200px;
+        width: 315px;
+        padding-bottom: 16px;
         margin-bottom: 0;
     }
 
     .add-button {
+        align-self: flex-start;
+        font-size: 16px;
         margin-top: 0;
-        min-width: 180px;
+        margin-bottom: 40px;
     }
 }
 
@@ -113,7 +133,7 @@
         max-width: 800px;
     }
 
-    .ingredients-controls {
+    .input-row {
         gap: 24px;
     }
 
