@@ -135,6 +135,7 @@
     .custom-select {
         height: 56px;
         width: 315px;
+        margin-right: 20px;
     }
 
     .custom-options {

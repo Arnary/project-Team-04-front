@@ -127,7 +127,8 @@
 
 /* Desktop (1440px+): Larger container */
 @media screen and (min-width: 1440px) {
-    .upload-container {
-        /*max-width: 450px;*/
+    .upload-container,
+    .upload-container.has-image {
+        min-width: 551px;
     }
 }

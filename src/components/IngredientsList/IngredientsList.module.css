@@ -89,6 +89,6 @@
 
 @media (min-width: 1440px) {
     .ingredient-list {
-        grid-template-columns: repeat(4, 1fr); /* 4 колонки для десктопної версії */
+        grid-template-columns: repeat(3, 1fr); /* 4 колонки для десктопної версії */
     }
 }

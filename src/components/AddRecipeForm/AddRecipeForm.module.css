@@ -15,25 +15,6 @@
 @media (min-width: 768px) {
     .add-recipe-form {
         max-width: 704px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .add-recipe-form {
-        max-width: 800px;
-        padding: 32px;
-    }
-}
-
-/* ================ FORM ROW (Category + Cooking Time) ================ */
-.form-row {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .add-recipe-form {
         gap: 0;
     }
     .form-row {
@@ -47,12 +28,36 @@
     }
 }
 
+@media (min-width: 1440px) {
+    .add-recipe-form {
+        max-width: 100%;
+        /*padding: 32px;*/
+        flex-direction: row;
+        /*gap: 32px;*/
+    }
+
+    .image-uploader-container {
+        flex: 1;
+        margin-right: 80px;
+    }
+
+    .form-content {
+        flex: 2;
+    }
+}
+
+/* ================ FORM ROW (Category + Cooking Time) ================ */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 /* ================ FORM ELEMENTS ================ */
 /* Input Groups */
 .form-group {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: clamp(6px, 2vw, 8px);
     margin-bottom: 20px;
 }

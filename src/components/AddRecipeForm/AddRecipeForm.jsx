@@ -175,76 +175,79 @@ const AddRecipeForm = () => {
 
     return (
         <form className={styles["add-recipe-form"]} onSubmit={handleSubmit(onSubmit)}>
-            <ImageUploader
-                control={control}
-                errors={errors}
-                setValue={setValue}
-                imagePreview={imagePreview}
-                setImagePreview={setImagePreview}
-            />
-
-            <TitleInput
-                register={register}
-                errors={errors}
-            />
-
-            <DescriptionTextarea
-                name="description"
-                placeholder="Enter a description of the dish"
-                register={register}
-                errors={errors}
-                watch={watch}
-                setValue={setValue}
-            />
-
-            <div className={styles["form-row"]}>
-                <div className={styles["form-group"]}>
-                    <CategoryDropdown
-                        label="CATEGORY"
-                        placeholder="Select a category"
-                        ref={categoryDropdownRef}
-                        onReset={() => {
-                            dispatch(resetSelectedCategory());
-                        }}
-                    />
-                </div>
-                <div className={styles["form-group"]}>
-                    <CookingTimeInput
-                        watch={watch}
-                        setValue={setValue}
-                        errors={errors}
-                    />
-                </div>
+            <div className={styles["image-uploader-container"]}>
+                <ImageUploader
+                    control={control}
+                    errors={errors}
+                    setValue={setValue}
+                    imagePreview={imagePreview}
+                    setImagePreview={setImagePreview}
+                />
             </div>
+            <div className={styles["form-content"]}>
+                <TitleInput
+                    register={register}
+                    errors={errors}
+                />
 
-            <IngredientsSection
-                control={control}
-                errors={errors}
-                ingredientsList={ingredientsList}
-                selectedIngredients={selectedIngredients}
-                setSelectedIngredients={setSelectedIngredients}
-                setValue={setValue}
-            />
+                <DescriptionTextarea
+                    name="description"
+                    placeholder="Enter a description of the dish"
+                    register={register}
+                    errors={errors}
+                    watch={watch}
+                    setValue={setValue}
+                />
 
-            <div className={styles["label-wrapper"]}>
-                <label className={styles["textarea-label"]}>RECIPE PREPARATION</label>
+                <div className={styles["form-row"]}>
+                    <div className={styles["form-group"]}>
+                        <CategoryDropdown
+                            label="CATEGORY"
+                            placeholder="Select a category"
+                            ref={categoryDropdownRef}
+                            onReset={() => {
+                                dispatch(resetSelectedCategory());
+                            }}
+                        />
+                    </div>
+                    <div className={styles["form-group"]}>
+                        <CookingTimeInput
+                            watch={watch}
+                            setValue={setValue}
+                            errors={errors}
+                        />
+                    </div>
+                </div>
+
+                <IngredientsSection
+                    control={control}
+                    errors={errors}
+                    ingredientsList={ingredientsList}
+                    selectedIngredients={selectedIngredients}
+                    setSelectedIngredients={setSelectedIngredients}
+                    setValue={setValue}
+                />
+
+                <div className={styles["label-wrapper"]}>
+                    <label className={styles["textarea-label"]}>RECIPE PREPARATION</label>
+                </div>
+
+                <DescriptionTextarea
+                    name="instructions"
+                    placeholder="Enter recipe"
+                    register={register}
+                    errors={errors}
+                    watch={watch}
+                    setValue={setValue}
+                />
+
+                <FormButtons
+                    reset={handleReset}
+                    setImagePreview={setImagePreview}
+                    setSelectedIngredients={setSelectedIngredients}
+                    setSelectedIngredient={setSelectedIngredient}
+                />
             </div>
-
-            <DescriptionTextarea
-                name="instructions"
-                placeholder="Enter recipe"
-                register={register}
-                errors={errors}
-                watch={watch}
-                setValue={setValue}
-            />
-
-            <FormButtons
-                reset={handleReset}
-                setImagePreview={setImagePreview}
-                setSelectedIngredients={setSelectedIngredients}
-                setSelectedIngredient={setSelectedIngredient}
-            />
         </form>
     );
 };
