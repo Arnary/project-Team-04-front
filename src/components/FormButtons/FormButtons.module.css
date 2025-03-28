@@ -3,7 +3,6 @@
     display: flex;
     gap: 8px;
     width: 100%;
-    margin-bottom: 64px;
 }
 
 /* ----- Base Button Styles ----- */
@@ -31,7 +30,7 @@
 
 /* ----- Publish Button ----- */
 .btn--publish {
-    padding: 14px 24px;
+    padding: 14px 32px;
     font-size: 14px;
     font-weight: 700;
     color: white;
@@ -61,10 +60,6 @@
 
 /* ----- Responsive Adjustments ----- */
 @media (min-width: 768px) {
-    .form-buttons {
-        margin-top: 80px;
-        margin-bottom: 52px;
-    }
 
     .btn--clear {
         width: 56px;
@@ -72,13 +67,7 @@
     }
 
     .btn--publish {
-        padding: 16px 32px;
+        padding: 16px 39px;
         font-size: 16px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .form-buttons {
-        margin-bottom: 104px;
     }
 }

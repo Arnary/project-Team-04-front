@@ -117,11 +117,23 @@
     .upload-container.has-image {
         min-width: 704px;
         min-height: 400px;
+        margin-bottom: 80px;
+    }
+
+    .upload-icon svg {
+        width: 64px;
+        height: 64px;
     }
 
     .upload-label,
     .upload-another-label {
         font-size: 16px;
+        gap: 16px
+    }
+
+    .image-with-upload,
+    .upload-label {
+        height: 400px;
     }
 }
 

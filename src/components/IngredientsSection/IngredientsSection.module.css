@@ -4,6 +4,7 @@
     max-width: 343px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 64px;
 }
 
 /* ----- Section Label ----- */
@@ -18,7 +19,7 @@
 .ingredients-controls {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 32px;
     width: 100%;
 }
 
@@ -26,14 +27,14 @@
 .input-row {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
     width: 100%;
 }
 
 /* ----- Quantity Input Field ----- */
 .quantity-input {
     width: 100%;
-    padding: 12px 16px;
+    padding: 0 16px 16px;
     padding-left: 0;
     border: none;
     border-bottom: 1px solid #BFBEBE;
@@ -53,9 +54,7 @@
 
 /* ----- Add Ingredient Button ----- */
 .add-button {
-    margin-top: 20px;
-    margin-bottom: 32px;
-    padding: 16px 24px;
+    padding: 14px 20px;
     color: #050505;
     background-color: #ffffff;
     border: 1px solid #bfbebe;
@@ -97,6 +96,7 @@
 @media (min-width: 768px) {
     .ingredients-section {
         max-width: 704px;
+        margin-bottom: 80px;
     }
 
     .ingredients-controls {
@@ -118,13 +118,14 @@
         width: 315px;
         padding-bottom: 16px;
         margin-bottom: 0;
+        font-size: 16px;
     }
 
     .add-button {
         align-self: flex-start;
         font-size: 16px;
         margin-top: 0;
-        margin-bottom: 40px;
+        padding: 16px 32px;
     }
 }
 

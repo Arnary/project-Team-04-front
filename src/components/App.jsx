@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import AppLayout from "./AppLayout/AppLayout";
 import AddRecipePage from "../pages/AddRecipePage/AddRecipePage";
+import Footer from "./Footer/Footer";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const Categories = lazy(() => import("../components/Categories/Categories"));
