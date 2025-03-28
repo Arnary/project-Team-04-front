@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import styles from "./AddRecipeForm.module.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCategory, resetSelectedCategory } from '../../redux/categories/categorySlice';
+import { resetSelectedCategory } from '../../redux/categories/categorySlice';
 
 import ImageUploader from '../ImageUploader/ImageUploader';
 import CookingTimeInput from '../CookingTimeInput/CookingTimeInput';
