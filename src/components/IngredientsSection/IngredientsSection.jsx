@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from "./IngredientsSection.module.css";
 import IngredientsList from '../IngredientsList/IngredientsList';
 import IngredientDropdown from '../IngredientDropdown/IngredientDropdown';
+import { resetSelectedIngredient } from '../../redux/ingredients/ingredientSlice';
 import { ReactComponent as PlusIcon } from '../../img/categories/plus.svg';
 
 const IngredientsSection = ({
                                 control,
                                 errors,
-                                ingredientsList,
                                 selectedIngredients,
                                 setSelectedIngredients,
                                 setValue
                             }) => {
+    const dispatch = useDispatch();
     const [ingredientAmount, setIngredientAmount] = useState("");
-    const [selectedIngredient, setSelectedIngredient] = useState(null);
+    const selectedIngredient = useSelector((state) => state.ingredients.selectedIngredient);
 
     const removeIngredient = (indexToRemove) => {
         const updatedIngredients = selectedIngredients.filter(
@@ -37,12 +39,8 @@ const IngredientsSection = ({
         setSelectedIngredients(updatedIngredients);
         setValue("ingredients", updatedIngredients);
 
-        setSelectedIngredient(null);
+        dispatch(resetSelectedIngredient());
         setIngredientAmount("");
-    };
-
-    const handleIngredientSelect = (ingredient) => {
-        setSelectedIngredient(ingredient);
     };
 
     return (
@@ -51,10 +49,7 @@ const IngredientsSection = ({
 
             <div className={styles["ingredients-controls"]}>
                 <div className={styles["input-row"]}>
-                    <IngredientDropdown
-                        onSelect={handleIngredientSelect}
-                        selectedIngredient={selectedIngredient}
-                    />
+                    <IngredientDropdown />
 
                     <input
                         type="text"

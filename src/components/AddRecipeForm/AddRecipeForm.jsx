@@ -13,6 +13,7 @@ import FormButtons from '../FormButtons/FormButtons';
 import CategoryDropdown from '../CategoryDropdown/CategoryDropdown'
 import TitleInput from '../TitleInput/TitleInput';
 import DescriptionTextarea from '../DescriptionTextarea/DescriptionTextarea';
+import {resetSelectedIngredient} from "../../redux/ingredients/ingredientSlice";
 
 const schema = yup.object().shape({
     image: yup.mixed().required("Recipe image is required"),
@@ -55,82 +56,6 @@ const AddRecipeForm = () => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [selectedIngredient, setSelectedIngredient] = useState(null);
 
-    // useEffect(() => {
-    //     fetch("http://localhost:3001/api/categories")
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             const sortedCategories = data
-    //                 .sort((a, b) => a.name.localeCompare(b.name))
-    //                 .map((cat) => ({ value: cat.id, label: cat.name }));
-    //
-    //             setCategories(sortedCategories);
-    //         })
-    //         .catch((err) => console.error("Error fetching categories:", err));
-    // }, []);
-    //
-    // useEffect(() => {
-    //     fetch("http://localhost:3001/api/ingredients")
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             const sortedIngredients = data
-    //                 .sort((a, b) => a.name.localeCompare(b.name))
-    //                 .map((ing) => ({
-    //                     value: ing.id,
-    //                     label: ing.name,
-    //                     img: ing.img
-    //                 }));
-    //
-    //             setIngredientsList(sortedIngredients);
-    //         })
-    //         .catch((err) => console.error("Error fetching ingredients:", err));
-    // }, []);
-
-    // const onSubmit = (data) => {
-    //     console.log("Recipe submitted:", data);
-    //     reset();
-    //     setImagePreview(null);
-    //     setSelectedIngredients([]);
-    // };
-
-    useEffect(() => {
-        fetch("http://localhost:3001/api/categories")
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error("Failed to fetch categories");
-                }
-                return res.json();
-            })
-            .then((data) => {
-                const sortedCategories = data
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((cat) => ({ value: cat.id, label: cat.name }));
-                setCategories(sortedCategories);
-            })
-            .catch((err) => alert(`Error fetching categories: ${err.message}`));
-    }, []);
-
-    useEffect(() => {
-        fetch("http://localhost:3001/api/ingredients")
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error("Failed to fetch ingredients");
-                }
-                return res.json();
-            })
-            .then((data) => {
-                const sortedIngredients = data
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((ing) => ({
-                        value: ing.id,
-                        label: ing.name,
-                        img: ing.img,
-                    }));
-                setIngredientsList(sortedIngredients);
-            })
-            .catch((err) => alert(`Error fetching ingredients: ${err.message}`));
-    }, []);
-
-
     const onSubmit = async (data) => {
         const formData = new FormData();
         formData.append("image", data.image);
@@ -166,6 +91,7 @@ const AddRecipeForm = () => {
 
     const handleReset = () => {
         dispatch(resetSelectedCategory());
+        dispatch(resetSelectedIngredient());
 
         reset();
         setImagePreview(null);

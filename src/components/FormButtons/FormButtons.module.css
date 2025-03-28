@@ -66,6 +66,11 @@
         margin-bottom: 52px;
     }
 
+    .btn--clear {
+        width: 56px;
+        height: 56px;
+    }
+
     .btn--publish {
         padding: 16px 32px;
         font-size: 16px;

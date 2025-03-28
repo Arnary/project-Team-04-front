@@ -1,4 +1,4 @@
-import React, { useEffect, useState, forwardRef } from 'react';
+import React, { useEffect, useState, forwardRef, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCategory } from '../../redux/categories/categorySlice';
 import css from "./CategoryDropdown.module.css";
@@ -11,28 +11,24 @@ const CategoryDropdown = forwardRef(({ label = "Select a category", placeholder 
     const status = useSelector((state) => state.categories.status);
     const [isOpen, setIsOpen] = useState(false);
 
+    const sortedCategories = useMemo(() => {
+        return [...categories].sort((a, b) => a.name.localeCompare(b.name));
+    }, [categories]);
+
     useEffect(() => {
         if (status === 'idle') {
             dispatch(fetchCategories());
         }
     }, [status, dispatch]);
 
-    const handleSelect = (categoryId) => {
-        const selectedCat = categories.find(cat => cat.id === categoryId);
-
-        if (selectedCat) {
-            dispatch(selectCategory(categoryId));
-            setIsOpen(false);
-        }
+    const handleSelect = (categoryName) => {
+        dispatch(selectCategory(categoryName));
+        setIsOpen(false);
     };
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
-
-    const selectedCategoryName = selectedCategory
-        ? categories.find(cat => cat.id === selectedCategory)?.name
-        : placeholder;
 
     return (
         <div className={css["custom-select-container"]}>
@@ -44,7 +40,7 @@ const CategoryDropdown = forwardRef(({ label = "Select a category", placeholder 
                 onClick={toggleDropdown}
             >
         <span className={css[selectedCategory ? 'selected-text' : 'placeholder-text']}>
-          {selectedCategoryName}
+          {selectedCategory || placeholder}
             <svg className={css["arrow-icon"]}>
             {isOpen
                 ? (<use href='/img/icons.svg#icon-chevron-up-black'></use>)
@@ -57,8 +53,8 @@ const CategoryDropdown = forwardRef(({ label = "Select a category", placeholder 
             {isOpen && (
                 <ul className={css["custom-options"]}>
                     {status !== 'loading' && status !== 'failed' &&
-                        categories.map((category) => (
-                                <li key={category.id} onClick={() => handleSelect(category.id)}>
+                        sortedCategories.map((category) => (
+                                <li key={category.id} onClick={() => handleSelect(category.name)}>
                                     {category.name}
                                 </li>
                             )
