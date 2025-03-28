@@ -1,0 +1,185 @@
+/* ====== Mobile First ====== */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #050505;
+}
+
+.tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.43;
+  padding: 10px;
+  border: 1px solid #bfbebe;
+  border-radius: 20px;
+  color: #bfbebe;
+}
+
+.description {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #bfbebe;
+  margin-bottom: 20px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  color: #bfbebe;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.02em;
+}
+
+.textLabel {
+  color: #BFBEBE;
+}
+
+.avatar {
+  border-radius: 30px;
+  padding: 23px 18px;
+  width: 32px;
+  height: 32px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 12px;
+  color: #bfbebe;
+}
+
+.authorButton {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 12px;
+  color: #050505;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.authorName {
+  font-weight: bold;
+}
+
+/* ====== Tablet (>=768px) ====== */
+@media screen and (min-width: 768px) {
+  .image {
+    margin-bottom: 40px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: 800;
+font-size: 24px;
+line-height: 117%;
+  }
+
+  .tag {
+    font-size: 14px;
+    line-height: 129%;
+    font-weight: 500;
+    padding: 12px;
+  }
+
+  .description {
+line-height: 150%;
+    font-size: 16px;
+    color: #1a1a1a;
+  }
+
+  .authorInfo {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .authorName {
+    font-weight: 700;
+font-size: 16px;
+line-height: 150%;
+color: #1a1a1a;
+  }
+
+  .avatar {
+    padding: 23px 18px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+/* ====== Desktop (>=1440px) ====== */
+@media screen and (min-width: 1440px) {
+  .section {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+  }
+  .title {
+    font-weight: 800;
+font-size: 24px;
+line-height: 117%;
+  }
+
+  .tag {
+    font-size: 18px;
+    padding: 14px;
+  }
+
+  .description {
+    font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: #1a1a1a;
+  }
+
+  .authorInfo {
+    font-weight: 500;
+font-size: 14px;
+line-height: 143%;
+  }
+
+  .authorName{
+    font-weight: 700;
+font-size: 16px;
+line-height: 150%;
+color: #1a1a1a;
+  }
+
+  .avatar {
+    border-radius: 30px;
+padding: 23px 18px;
+    width: 50px;
+    height: 50px;
+  }
+}

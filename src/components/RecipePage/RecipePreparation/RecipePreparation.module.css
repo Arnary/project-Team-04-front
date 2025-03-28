@@ -1,0 +1,95 @@
+/* ====== Mobile First ====== */
+.preparationSection {
+  width: 100%;
+  max-width: 343px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  margin-top: 32px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 133%;
+  color: #050505;
+  text-transform: uppercase;
+}
+
+.instructions {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.02em;
+  color: #bfbebe;
+}
+
+.favoriteBtn {
+  margin-top: 32px;
+  align-self: flex-start;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-transform: uppercase;
+  border-radius: 30px;
+  border: 1px solid #bfbebe;
+  background-color: transparent;
+  color: #bfbebe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favoriteBtn:hover {
+  background-color: #bfbebe;
+  color: #ffffff;
+}
+
+/* ====== Tablet (>=768px) ====== */
+@media screen and (min-width: 768px) {
+  .preparationSection {
+    max-width: 100%; /* наприклад, 704px */
+    margin: 0 auto;
+  }
+
+  .instructions {
+    font-size: 16px;
+    line-height: 150%;
+    color: #1a1a1a;
+  }
+
+  .favoriteBtn {
+    border-radius: 30px;
+padding: 16px 32px;
+width: 215px;
+height: 56px;
+border: 1px solid #bfbebe;
+margin-bottom: 104px;
+  }
+}
+
+/* ====== Desktop (>=1440px) ====== */
+@media screen and (min-width: 1440px) {
+  .preparationSection {
+    max-width: 100%; /* наприклад, 980px */
+  }
+
+  .title {
+font-size: 20px;
+line-height: 120%;;
+  }
+
+  .instructions {
+    font-size: 18px;
+  }
+
+  .favoriteBtn {
+    border: 1px solid #bfbebe;
+border-radius: 30px;
+padding: 16px 32px;
+width: 215px;
+height: 56px;
+margin-bottom: 120px;
+  }
+}

@@ -6,6 +6,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-top: 32px;
 }
 
 .ingredient-item {
@@ -80,6 +81,7 @@
     .ingredient-list {
         grid-template-columns: repeat(3, 1fr);
         gap: 28px;
+        margin-top: 40px;
     }
 
     .ingredient-item {

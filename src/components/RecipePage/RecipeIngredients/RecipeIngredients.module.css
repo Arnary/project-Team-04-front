@@ -1,0 +1,149 @@
+.section {
+  margin: 20px auto;
+  max-width: 375px;
+}
+
+.title {
+font-weight: 800;
+font-size: 18px;
+line-height: 133%;
+letter-spacing: -0.02em;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 32px;
+  color: #050505;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: calc(50% - 8px);
+  background-color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.indridientName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ingridientImg {
+  border: 1px solid #bfbebe;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #050505;
+}
+
+.quantity {
+  font-size: 12px;
+  color: #7a7a7a;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    margin: 40px 0;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+  }
+
+  .item {
+    width: 100%; 
+    height: 90px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ingridientImg {
+    padding: 8px;
+    border: 1px solid #bfbebe;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  .indridientName {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: #050505;
+  }
+
+  .quantity {
+    font-size: 14px;
+    color: #7a7a7a;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .title {
+    font-weight: 800;
+font-size: 20px;
+line-height: 120%;
+  }
+
+  .list {
+    gap: 20px; 
+  }
+
+  .item {
+    padding: 14px;
+  }
+
+  .image {
+    width: 56px;
+    height: 56px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .quantity {
+    font-size: 16px;
+  }
+}

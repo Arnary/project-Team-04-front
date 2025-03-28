@@ -2,7 +2,7 @@
 .textarea-container {
     position: relative;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 32px;
     display: flex;
     flex-direction: column;
 }
@@ -31,6 +31,10 @@
     transition: border-color 0.3s ease;
 }
 
+.textarea::placeholder {
+    color: #bfbebe;
+}
+
 /* Focus state for better UX */
 .textarea:focus {
     border-bottom-color: #050505;
@@ -41,7 +45,7 @@
     position: absolute;
     top: 5px;
     right: 10px;
-    font-size: 12px;
+    font-size: 14px;
     color: #BFBEBE;
     background-color: white;
     padding-left: 5px;
@@ -74,6 +78,11 @@
 
 /* ----- Responsive Adjustments ----- */
 @media screen and (min-width: 768px) {
+    .textarea-container {
+        margin-bottom: 60px;
+
+    }
+    
     .textarea {
         font-size: 16px;
         width: 649px;
@@ -84,12 +93,13 @@
     }
 
     .char-count {
-        right: 0;
+        font-size: 16px;
+        right: 55px;
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .textarea {
-        padding-bottom: 18px;
+    .char-count {
+        right: 5px;
     }
 }

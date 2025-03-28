@@ -8,6 +8,7 @@ import areasReducer from "./areas/areaSlice";
 import ingredientsReducer from "./ingredients/ingredientSlice";
 import recipeReducer from "./recipes/recipesSlice";
 import profileReducer from "./profile/profileSlice";
+import popularRecipesReducer from "./popularRecipes/popularRecipesSlice";
 
 const recipeConfig = {
 	key: "recipes",
@@ -30,7 +31,8 @@ export const store = configureStore({
 		ingredients: ingredientsReducer,
 		recipes: persistReducer(recipeConfig, recipeReducer),
 		auth: persistedAuthReducer,
-    	profile: profileReducer,
+		profile: profileReducer,
+		popular: popularRecipesReducer,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({
