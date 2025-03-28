@@ -6,6 +6,8 @@ import LogOutModal from "../../components/LogOutModal/LogOutModal";
 import Hero from "../../components/Hero/Hero";
 import { Outlet } from 'react-router-dom';
 import Testimonials from "../../components/Testimonials/Testimonials";
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -13,6 +15,8 @@ const HomePage = () => {
   const [isSignInOpen, setSignInOpen] = useState(false);
   const [isSignUpOpen, setSignUpOpen] = useState(false);
   const [isLogOutOpen, setLogOutOpen] = useState(false);
+  const { token } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   // This function closes the SignUp modal and opens the SignIn modal.
   const switchToSignIn = () => {
@@ -25,9 +29,17 @@ const HomePage = () => {
     setSignInOpen(false);
   };
 
+    const handleAddRecipeClick = () => {
+        if (token) {
+            navigate('/recipe/add');
+        } else {
+            setSignInOpen(true);
+        }
+    };
+
   return (
     <>
-      <Hero />
+      <Hero onAddRecipeClick={handleAddRecipeClick} />
       <div className={css.buttons}>
         <button onClick={() => setSignInOpen(true)}>Sign In</button>
         <button onClick={() => setSignUpOpen(true)}>Sign Up</button>
