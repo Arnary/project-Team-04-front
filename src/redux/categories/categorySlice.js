@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCategories } from './operations';
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const categorySlice = createSlice({
   name: "categories",

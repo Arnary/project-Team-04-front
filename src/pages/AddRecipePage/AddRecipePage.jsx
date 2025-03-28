@@ -6,12 +6,14 @@ import styles from './AddRecipePage.module.css';
 
 const AddRecipePage = () => {
     return (
-        <div className={styles.addRecipePage}>
-            <PathInfo currentPage="Add Recipe" />
-            <MainTitle>Add Recipe</MainTitle>
-            <Subtitle>Reveal your culinary art, share your favorite recipe and create gastronomic masterpieces with us.</Subtitle>
-            <AddRecipeForm />
-        </div>
+        <section className={styles["add-recipe-section"]}>
+            <div className={styles.addRecipePage}>
+                <PathInfo currentPage="ADD RECIPE" />
+                <MainTitle>Add Recipe</MainTitle>
+                <Subtitle>Reveal your culinary art, share your favorite recipe and create gastronomic masterpieces with us.</Subtitle>
+                <AddRecipeForm />
+            </div>
+        </section>
     );
 };
 

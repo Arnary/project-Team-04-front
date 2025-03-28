@@ -6,11 +6,19 @@
     padding: 0;
 }
 
+.add-recipe-section {
+    padding: 64px 0 64px;
+}
+
 
 @media screen and (min-width: 768px) {
     .addRecipePage {
         max-width: 768px;
         padding: 0 32px;
+    }
+
+    .add-recipe-section {
+        padding: 100px 0 100px;
     }
 }
 
@@ -18,5 +26,9 @@
     .addRecipePage {
         max-width: 1440px;
         padding: 0 100px;
+    }
+
+    .add-recipe-section {
+        padding: 120px 0 120px;
     }
 }
