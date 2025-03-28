@@ -8,7 +8,7 @@ const ImageUploader = ({ control, errors, setValue, imagePreview, setImagePrevie
         const file = e.target.files[0];
         if (file) {
             field.onChange(file);
-            setValue("image", file);
+            setValue("image", [file]);
             setImagePreview(URL.createObjectURL(file));
         }
     };

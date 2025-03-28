@@ -4,7 +4,8 @@ import { selectCategory } from '../../redux/categories/categorySlice';
 import css from "./CategoryDropdown.module.css";
 import { fetchCategories } from '../../redux/categories/operations';
 
-const CategoryDropdown = forwardRef(({ label = "Select a category", placeholder = "Choose category", onReset }, ref) => {
+const CategoryDropdown = forwardRef((
+    { label = "Select a category", placeholder = "Choose category", onReset, register, setValue }, ref) => {
     const dispatch = useDispatch();
     const categories = useSelector((state) => state.categories.list);
     const selectedCategory = useSelector((state) => state.categories.selectedCategory);
@@ -22,7 +23,9 @@ const CategoryDropdown = forwardRef(({ label = "Select a category", placeholder 
     }, [status, dispatch]);
 
     const handleSelect = (categoryName) => {
+        const selectedCat = categories.find(cat => cat.name === categoryName);
         dispatch(selectCategory(categoryName));
+        setValue('category', { value: categoryName, id: selectedCat.id }, { shouldValidate: true });
         setIsOpen(false);
     };
 
