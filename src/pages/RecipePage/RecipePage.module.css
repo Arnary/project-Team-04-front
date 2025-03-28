@@ -1,0 +1,102 @@
+/* RecipePage.module.css */
+
+.section {
+  padding: 20px 16px;
+  background-color: #ffffff;
+}
+
+.breadcrumbs {
+  font-size: 12px;
+  color: #7e7e7e;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.imageContainer img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 16px 0;
+  color: #050505;
+}
+
+.metaInfo {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #8e8e8e;
+  margin-bottom: 12px;
+}
+
+description {
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.createdBy {
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+.ingredientsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ingredientItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ingredientItem img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.preparation {
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin: 24px 0;
+}
+
+.favoriteBtn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid #050505;
+  background-color: transparent;
+  color: #050505;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favoriteBtn:hover {
+  background-color: #050505;
+  color: #ffffff;
+}
+

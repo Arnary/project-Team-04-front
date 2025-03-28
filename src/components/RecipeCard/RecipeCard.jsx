@@ -6,9 +6,9 @@ import noAvatar from "../../img/empty/no-avatar.jpg";
 import { defaultUserName } from "../../constants/constants";
 
 import RecipeCardFavoriteButton from "../RecipeCardFavoriteButton/RecipeCardFavoriteButton";
-import ArrowUpRightIcon from "../../icons/ArrowUpRightIcon";
 
-export const RecipeCard = ({ recipe, isFavorite }) => {
+
+export const RecipeCard = ({ recipe, isFavorite, className  }) => {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
@@ -16,7 +16,7 @@ export const RecipeCard = ({ recipe, isFavorite }) => {
   	};
 
 	return (
-		<div className={css.card}>
+		<div className={className ? className : css.card}>
 			<img
 				className={css.image}
 				src={recipe?.thumb ? `${recipe.thumb.startsWith("http") ? recipe.thumb : process.env.REACT_APP_BASE_URL + recipe.thumb}` : noImage}
