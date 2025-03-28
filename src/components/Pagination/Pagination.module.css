@@ -1,0 +1,63 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px;
+  margin: 32px auto;
+}
+
+.paginationButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(5, 5, 5); /* Для мобільних */
+  border-radius: 100px;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 143%;
+  letter-spacing: 0.17px;
+  text-align: center;
+  color: rgb(26, 26, 26);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.paginationButton.active {
+  background-color: #BFBEBE;
+  color: white;
+  border-color: #BFBEBE;
+}
+
+.paginationButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+@media (min-width: 768px) {
+  .pagination {
+    margin: 60px auto;
+  }
+
+  .paginationButton {
+    border: 1px solid rgb(191, 190, 190);
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .pagination {
+    margin: 60px auto;
+  }
+
+  .paginationButton {
+    border: 1px solid rgb(191, 190, 190);
+  }
+
+}

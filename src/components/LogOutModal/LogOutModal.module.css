@@ -1,134 +1,134 @@
 .titleMob {
-    font-weight: 800;
-    font-size: 28px;
-    line-height: 1.14286;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    text-align: center;
-    color: #050505;
-    margin-bottom: 16px;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.14286;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #050505;
+  margin-bottom: 16px;
 }
 
 .titleDesc {
-    display: none;
+  display: none;
 }
 
 .message {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.42857;
-    letter-spacing: -0.02em;
-    text-align: center;
-    color: #bfbebe;
-    margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #bfbebe;
+  margin-bottom: 32px;
 }
 
 .buttonGroup {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
 }
 
 .cancelButton {
-    border: 1px solid #bfbebe;
-    border-radius: 30px;
-    padding: 14px 114px;
-    width: 283px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.42857;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    color: #050505;
-    background-color: #fff;
+  border: 1px solid #bfbebe;
+  border-radius: 30px;
+  padding: 14px 114px;
+  width: 283px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #050505;
+  background-color: #fff;
 }
 
 .cancelButton:hover {
-    background: #050505;
-    color: #fff;
-    border: none;
+  background: #050505;
+  color: #fff;
+  border: 1px solid #050505;
 }
 
 .confirmButton {
-    border-radius: 30px;
-    border: none;
-    padding: 14px 110px;
-    width: 283px;
-    cursor: pointer;
-    background: #050505;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.42857;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    color: #fff;
+  border-radius: 30px;
+  padding: 14px 110px;
+  width: 283px;
+  cursor: pointer;
+  background: #050505;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.42857;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #050505;
 }
 
 .confirmButton:hover {
-    background-color: #fff;
-    color: #050505;
-    border: 1px solid #bfbebe;
+  background-color: #fff;
+  color: #050505;
+  border: 1px solid #bfbebe;
 }
 
 @media (min-width: 768px) {
-    .titleMob {
-        display: none;
-    }
+  .titleMob {
+    display: none;
+  }
 
-    .titleDesc {
-        display: block;
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 1.25;
-        letter-spacing: -0.02em;
-        text-transform: uppercase;
-        text-align: center;
-        color: #050505;
-        margin-bottom: 20px;
-    }
+  .titleDesc {
+    display: block;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #050505;
+    margin-bottom: 20px;
+  }
 
-    .message {
-        font-size: 16px;
-        line-height: 1.5;
-        color: #1a1a1a;
-        margin-bottom: 40px;
-    }
+  .message {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+  }
 
-    .buttonGroup {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-    }
+  .buttonGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
 
-    .cancelButton {
-        border: 1px solid #1a1a1a;
-        padding: 16px 169px;
-        width: 400px;
-        cursor: pointer;
-        font-size: 16px;
-        line-height: 1.5;
-    }
+  .cancelButton {
+    border: 1px solid #1a1a1a;
+    padding: 16px 169px;
+    width: 400px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
-    .cancelButton:hover {
-        background: #050505;
-        color: #fff;
-        border: none;
-    }
+  .cancelButton:hover {
+    background: #050505;
+    color: #fff;
+    border: 1px solid #050505;
+  }
 
-    .confirmButton {
-        border: none;
-        padding: 16px 164px;
-        width: 400px;
-        font-size: 16px;
-        line-height: 1.5;
-    }
+  .confirmButton {
+    border: 1px solid #050505;
+    padding: 16px 164px;
+    width: 400px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
-    .confirmButton:hover {
-        background-color: #fff;
-        color: #050505;
-        border: 1px solid #1a1a1a;
-    }
+  .confirmButton:hover {
+    background-color: #fff;
+    color: #050505;
+    border: 1px solid #1a1a1a;
+  }
 }

@@ -1,0 +1,152 @@
+:root {
+  --swiper-theme-color: #050505 !important;
+}
+
+.section {
+  padding-bottom: 80px;
+}
+
+.mainTitle {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #1A1A1A;
+  margin: 0 auto 16px;
+  max-width: 261px;
+}
+
+.subTitle {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #050505;
+  margin: 0 auto 12px;
+  max-width: 204px;
+  text-transform: uppercase;
+}
+
+.decoration {
+  color: #E8E8E8;
+  margin-bottom: 20px;
+  width: auto;
+  text-align: left;
+  padding-left: 16px;
+}
+
+.decorationIcon {
+  display: inline-block;
+  vertical-align: text-top;
+  width: 40px;
+  height: 32px;
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonialText {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #050505;
+  margin: 0 auto 64px;
+  max-width: 343px;
+}
+
+.authorName {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: #050505;
+  max-width: 117px;
+  margin: 0 auto 40px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.pagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .section {
+      padding-bottom: 100px;
+  }
+
+  .mainTitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .subTitle {
+    font-size: 40px;
+    line-height: 44px;
+    max-width: 291px;
+    margin-bottom: 0;
+  }
+
+  .decoration {
+    margin-bottom: 40px;
+    padding-left: 32px;
+  }
+
+  .decorationIcon {
+    width: 59px;
+    height: 48px;
+  }
+
+  .testimonialText {
+    font-size: 24px;
+    line-height: 36px;
+    max-width: 704px;
+  }
+
+  .authorName {
+    font-size: 20px;
+    max-width: 146px;
+  }
+
+  .pagination {
+    width: 72px;
+    height: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section {
+    padding-bottom: 120px;
+  }
+
+  .subTitle {
+    max-width: none;
+  }
+
+  .decoration {
+    max-width: 822px;
+    padding-left: 250px;
+  }
+
+  .testimonialText {
+    max-width: 822px;
+  }
+
+  .authorName {
+    max-width: 146px;
+  }
+}

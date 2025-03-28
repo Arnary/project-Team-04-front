@@ -23,7 +23,7 @@ const Categories = () => {
         recipes that combine taste, style and the warm atmosphere of the
         kitchen.
       </Subtitle>
-        <CategoryList />
+        <CategoryList/>
       </div>
     </section>
   );

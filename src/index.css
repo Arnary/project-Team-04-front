@@ -1,12 +1,15 @@
 :root {
-  --text-headers-color: #050505;
-  --text-default-color: #1a1a1a;
-  --categories-name-background: rgba(255, 255, 255, 0.2);
+	--text-headers-color: #050505;
+	--text-default-color: #1a1a1a;
+	--categories-name-background: rgba(255, 255, 255, 0.2);
+
+	--color-gray: #bfbebe;
+	--color-black: #000000;
 }
 
 body {
-  font-family: "Mulish", sans-serif;
-  line-height: 1.5;
+	font-family: "Mulish", sans-serif;
+	line-height: 1.5;
 }
 
 h1,
@@ -16,24 +19,56 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+	margin: 0;
 }
 
 ul,
 ol {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	width: 1em;
+	height: 1em;
 }
 
 li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+	padding: 0;
+	border: none;
+}
+
+.container {
+  max-width: 375px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 80px;
+  }
 }
