@@ -1,0 +1,170 @@
+/* ================ BASE STYLES ================ */
+.add-recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .add-recipe-form {
+        max-width: 704px;
+        gap: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .add-recipe-form {
+        max-width: 100%;
+        /*padding: 32px;*/
+        flex-direction: row;
+        /*gap: 32px;*/
+    }
+
+    .image-uploader-container {
+        flex: 1;
+        margin-right: 80px;
+    }
+
+    .form-content {
+        flex: 2;
+    }
+}
+
+/* ================ FORM ROW (Category + Cooking Time) ================ */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .form-row {
+        flex-direction: row;
+        margin-bottom: 60px;
+        gap: 19px;
+    }
+}
+
+/* ================ FORM ELEMENTS ================ */
+/* Input Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 2vw, 8px);
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .form-group {
+        margin-bottom: 0;
+    }
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Text Inputs */
+.text-input {
+    width: 100%;
+    border: none;
+    padding: clamp(6px, 2vw, 8px) 0;
+    font-size: clamp(1rem, 4vw, 1.125rem);
+    outline: none;
+    background: transparent;
+}
+
+.text-input--title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+}
+
+.text-input::placeholder {
+    color: #999;
+    font-weight: bold;
+}
+
+.text-input:focus {
+    border-bottom: 1px solid #ccc;
+}
+
+/* ================ ERROR STATES ================ */
+.error-message {
+    color: red;
+    font-size: clamp(0.7rem, 3vw, 0.8rem);
+    margin-top: 4px;
+}
+
+.has-error {
+    border-color: red;
+}
+
+/* ================ LAYOUT HELPERS ================ */
+.flex-row {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 5vw, 20px);
+    width: 100%;
+}
+
+/* Media Queries for Adaptive Design */
+@media screen and (min-width: 375px) {
+    .ingredients-row {
+        flex-direction: row;
+    }
+
+    .ingredient-item {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .form-buttons {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .btn {
+        width: auto;
+    }
+
+    .flex-row {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .flex-row > * {
+        flex: 1;
+    }
+}
+
+.label-wrapper {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.textarea-label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #050505;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+}
+
+@media screen and (min-width: 768px) {
+    .label-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .textarea-label {
+        font-size: 20px;
+    }
+}

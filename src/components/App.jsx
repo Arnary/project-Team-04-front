@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import AppLayout from "./AppLayout/AppLayout";
+import AddRecipePage from "../pages/AddRecipePage/AddRecipePage";
 import Footer from "./Footer/Footer";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
@@ -28,6 +29,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/recipe/add" element={<AddRecipePage />} />
           <Route path="recipe/:id" element={<RecipePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
