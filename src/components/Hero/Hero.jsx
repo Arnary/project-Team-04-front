@@ -5,7 +5,7 @@ import heroImg2x from '../../img/dish-2x.png';
 import dishImg1x from '../../img/hero-image.png';
 import dishImg2x from '../../img/hero-image-2x.png';
 
-const Hero = () => {
+const Hero = ( {onAddRecipeClick} ) => {
   return (
     <section className={styles.hero}>
       <div className={style.container}>
@@ -15,7 +15,7 @@ const Hero = () => {
           Amazing recipes for beginners in the world of cooking, enveloping you in the aromas and tastes of various cuisines.
         </p>
 
-        <button className={styles.button}>ADD RECIPE</button>
+        <button className={styles.button} onClick={onAddRecipeClick}>ADD RECIPE</button>
 
         <div className={styles.images}>
           <img

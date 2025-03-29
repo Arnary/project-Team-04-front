@@ -1,0 +1,96 @@
+.ingredient-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 32px;
+}
+
+.ingredient-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding-right: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ingredient-image-wrapper {
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    border: 1px solid #BFBEBE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-right: 10px;
+}
+
+.ingredient-image {
+    max-width: 75px;
+    max-height: 75px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.ingredient-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 4px;
+    padding-right: 16px;
+}
+
+.ingredient-name {
+    font-weight: 500;
+    font-size: 14px;
+    color: #050505;
+}
+
+.ingredient-amount {
+    font-size: 14px;
+    color: #BFBEBE;
+}
+
+.remove-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.remove-icon {
+    position: absolute;
+    top: -11px;
+    right: -11px;
+    width: 16px;
+    height: 16px;
+    color: #BFBEBE;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .ingredient-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-top: 40px;
+    }
+
+    .ingredient-item {
+        width: 178px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .ingredient-list {
+        grid-template-columns: repeat(3, 1fr); /* 4 колонки для десктопної версії */
+    }
+}

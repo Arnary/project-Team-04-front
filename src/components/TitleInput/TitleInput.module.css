@@ -1,0 +1,46 @@
+/* ----- Form Group Container ----- */
+.form-group {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+/* ----- Base Input Styles ----- */
+.text-input {
+    width: 100%;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+    border-style: none;
+}
+
+/* ----- Title-Specific Modifiers ----- */
+.text-input--title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+}
+
+.text-input::placeholder {
+    color: #bfbebe;
+}
+
+/* ----- Error States ----- */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* ----- Responsive Adjustments ----- */
+@media screen and (min-width: 768px) {
+    .text-input {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .text-input--title {
+        letter-spacing: 0.5px;
+    }
+}

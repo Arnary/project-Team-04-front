@@ -1,0 +1,31 @@
+.path-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #BFBEBE;
+    margin-bottom: 32px;
+}
+
+.path-link {
+    text-decoration: none;
+    color: #BFBEBE;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.path-separator {
+    margin: 0 8px;
+}
+
+.current-page {
+    color: #050505;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+@media screen and (min-width: 768px) {
+    .path-container {
+        margin-bottom: 40px;
+    }
+}

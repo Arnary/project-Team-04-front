@@ -1,0 +1,146 @@
+/* ----- Main Upload Container ----- */
+.upload-container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 343px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(8px, 3vw, 10px);
+    margin: 0 auto clamp(15px, 5vw, 20px);
+}
+
+/* Modifier when an image is uploaded */
+.upload-container.has-image {
+    padding: 0;
+    border: none;
+}
+
+/* ----- Image Preview & Upload Area ----- */
+.image-with-upload,
+.upload-label {
+    width: 100%;
+    height: clamp(250px, 70vw, 318px);
+    border-radius: 8px;
+}
+
+/* Image Preview Styling */
+.image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ----- Upload Button Styles ----- */
+.upload-label,
+.upload-another-label {
+    color: #050505;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Primary Upload Area (No Image) */
+.upload-label {
+    flex-direction: column;
+    justify-content: center;
+    border: 2px dashed #BFBEBE;
+    border-radius: 30px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.upload-label:hover {
+    border-color: #BFBEBE;
+    background-color: #ffffff;
+}
+
+/* Camera Icon Styling */
+.upload-icon {
+    width: clamp(48px, 15vw, 64px);
+    height: clamp(48px, 15vw, 64px);
+}
+
+.upload-icon svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 4px;
+}
+
+/* Hide File Inputs */
+.upload-container input[type="file"],
+.upload-another-label input[type="file"] {
+    display: none;
+}
+
+/* "Upload Another" Button Container */
+.upload-another-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----- Responsive Breakpoints ----- */
+/* Mobile (320px - 374px): Adjust height for smaller screens */
+@media screen and (min-width: 320px) {
+    .upload-container {
+        max-width: calc(343px + (100vw - 375px) * 0.1);
+    }
+
+    .image-with-upload,
+    .upload-label {
+        height: clamp(250px, 90vw, 318px);
+    }
+}
+
+/* Mobile (375px+): Fixed height */
+@media screen and (min-width: 375px) {
+    .upload-container {
+        max-width: 343px;
+    }
+
+    .image-with-upload,
+    .upload-label {
+        height: 318px;
+    }
+}
+
+/* Tablet (768px+): Slightly wider container */
+@media screen and (min-width: 768px) {
+    .upload-container,
+    .upload-container.has-image {
+        min-width: 704px;
+        min-height: 400px;
+        margin-bottom: 80px;
+    }
+
+    .upload-icon svg {
+        width: 64px;
+        height: 64px;
+    }
+
+    .upload-label,
+    .upload-another-label {
+        font-size: 16px;
+        gap: 16px
+    }
+
+    .image-with-upload,
+    .upload-label {
+        height: 400px;
+    }
+}
+
+/* Desktop (1440px+): Larger container */
+@media screen and (min-width: 1440px) {
+    .upload-container,
+    .upload-container.has-image {
+        min-width: 551px;
+    }
+}

@@ -1,0 +1,144 @@
+/* ----- Base Container Styles ----- */
+.ingredients-section {
+    width: 100%;
+    max-width: 343px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+}
+
+/* ----- Section Label ----- */
+.dropdown-label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #050505;
+    margin-bottom: 8px;
+}
+
+/* ----- Input Controls Container ----- */
+.ingredients-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+/* ----- Input Row Container ----- */
+.input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* ----- Quantity Input Field ----- */
+.quantity-input {
+    width: 100%;
+    padding: 0 16px 16px;
+    padding-left: 0;
+    border: none;
+    border-bottom: 1px solid #BFBEBE;
+    font-size: 14px;
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.quantity-input:focus {
+    border-bottom-color: #050505;
+}
+
+.quantity-input::placeholder {
+    color: #BFBEBE;
+}
+
+/* ----- Add Ingredient Button ----- */
+.add-button {
+    padding: 14px 20px;
+    color: #050505;
+    background-color: #ffffff;
+    border: 1px solid #bfbebe;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: auto;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-button:hover:not(:disabled) {
+    background-color: #f5f5f5;
+    border-color: #050505;
+}
+
+.add-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.plus-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ----- Error Message ----- */
+.error-message {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* ----- Responsive Breakpoints ----- */
+@media (min-width: 768px) {
+    .ingredients-section {
+        max-width: 704px;
+        margin-bottom: 80px;
+    }
+
+    .ingredients-controls {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .dropdown-label {
+        font-size: 20px;
+    }
+
+    .input-row {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 19px;
+    }
+
+    .quantity-input {
+        width: 315px;
+        padding-bottom: 16px;
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+
+    .add-button {
+        align-self: flex-start;
+        font-size: 16px;
+        margin-top: 0;
+        padding: 16px 32px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .ingredients-section {
+        max-width: 800px;
+    }
+
+    .input-row {
+        gap: 24px;
+    }
+
+    .add-button {
+        padding: 16px 32px;
+    }
+}
