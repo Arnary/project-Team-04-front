@@ -5,6 +5,7 @@ import * as yup from "yup";
 import styles from "./AddRecipeForm.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { resetSelectedCategory } from '../../redux/categories/categorySlice';
+import { useNavigate } from 'react-router-dom';
 
 import ImageUploader from '../ImageUploader/ImageUploader';
 import CookingTimeInput from '../CookingTimeInput/CookingTimeInput';
@@ -29,6 +30,7 @@ const schema = yup.object().shape({
 });
 
 const AddRecipeForm = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const categoryDropdownRef = useRef(null);
     const categories = useSelector((state) => state.categories.list);
@@ -127,8 +129,8 @@ const AddRecipeForm = () => {
                 throw new Error(errorData.message || "Error creating recipe");
             }
 
-            alert("Recipe successfully created!");
             handleReset();
+            navigate('/profile');
         } catch (error) {
             alert(`Error: ${error.message}`);
         }
