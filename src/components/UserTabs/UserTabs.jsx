@@ -20,9 +20,9 @@ const UserTabs = ({ userId }) => {
     switch (activeTab) {
       case "My recipes":
       case "Recipes":
-        return <UserRecipes userId={userId} />;
+        return <UserRecipes userId={userId} isOwnProfile={isOwnProfile} />;
       case "My favorites":
-        return <UserFavorites />;
+        return <UserFavorites isOwnProfile={isOwnProfile} />;
       case "Followers":
         return <UserFollowers userId={userId} />;
       case "Following":

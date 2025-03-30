@@ -1,39 +1,38 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { fetchUserFavoriteRecipes } from "../../redux/recipes/operations";
 import RecipePreviewList from "../RecipePreviewList/RecipePreviewList";
 import EmptyList from "../EmptyList/EmptyList";
-import { fetchAuthUserFavoriteRecipes } from "../../api/foodies";
-import { toast } from "react-hot-toast";
-import { useEffect, useState } from "react";
 import Pagination from "../Pagination/Pagination";
 
-const UserFavorites = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+const UserFavorites = ({ isOwnProfile }) => {
+  const dispatch = useDispatch();
+  const recipes = useSelector((state) => state.recipes.list);
+  const currentPage = useSelector((state) => state.recipes.currentPage);
+  const totalPages = useSelector((state) => state.recipes.totalPages);
 
   const changeCurrentPage = async (page) => {
     await loadUserRecipes(page);
   };
 
   const loadUserRecipes = async (page) => {
-    try {
-      const response = await fetchAuthUserFavoriteRecipes(page);
-      setRecipes(response.recipes);
-      setCurrentPage(response.currentPage);
-      setTotalPages(response.totalPages);
-    } catch (error) {
-      toast.error("Failed to load recipes!");
-    }
+    dispatch(fetchUserFavoriteRecipes({ page }));
   };
 
   useEffect(() => {
-    loadUserRecipes(currentPage);
+    loadUserRecipes(1);
   }, []);
 
   return (
     <div>
-      {recipes.length > 0 ? (
+      {recipes?.length > 0 ? (
         <>
-          <RecipePreviewList items={recipes} />
+          <RecipePreviewList
+            items={recipes}
+            isOwnProfile={isOwnProfile}
+            listType="favorites"
+          />
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

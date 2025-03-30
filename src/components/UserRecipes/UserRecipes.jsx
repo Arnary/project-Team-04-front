@@ -1,28 +1,24 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchUserRecipes } from "../../redux/recipes/operations";
 import RecipePreviewList from "../RecipePreviewList/RecipePreviewList";
 import EmptyList from "../EmptyList/EmptyList";
-import { useEffect, useState } from "react";
-import { fetchUserRecipes } from "../../api/foodies";
-import { toast } from "react-hot-toast";
 import Pagination from "../Pagination/Pagination";
 
-const UserRecipes = ({ userId }) => {
-  const [recipes, setRecipes] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+const UserRecipes = ({ userId, isOwnProfile }) => {
+  const recipes = useSelector((state) => state.recipes.list);
+  const currentPage = useSelector((state) => state.recipes.currentPage);
+  const totalPages = useSelector((state) => state.recipes.totalPages);
+
+  const dispatch = useDispatch();
 
   const changeCurrentPage = async (page) => {
     await loadUserRecipes(page);
   };
 
   const loadUserRecipes = async (page) => {
-    try {
-      const response = await fetchUserRecipes(userId, page);
-      setRecipes(response.recipes);
-      setCurrentPage(response.currentPage);
-      setTotalPages(response.totalPages);
-    } catch (error) {
-      toast.error("Failed to load recipes!");
-    }
+    dispatch(fetchUserRecipes({ userId, page }));
   };
 
   useEffect(() => {
@@ -31,9 +27,13 @@ const UserRecipes = ({ userId }) => {
 
   return (
     <div>
-      {recipes.length > 0 ? (
+      {recipes?.length > 0 ? (
         <>
-          <RecipePreviewList items={recipes} />
+          <RecipePreviewList
+            items={recipes}
+            isOwnProfile={isOwnProfile}
+            listType="recipes"
+          />
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
