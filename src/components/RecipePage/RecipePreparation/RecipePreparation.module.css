@@ -65,8 +65,9 @@
 
   .favoriteBtn {
     padding: 16px 32px;
-    width: 215px;
     height: 56px;
+    font-size: 16px;
+
   }
 }
 
