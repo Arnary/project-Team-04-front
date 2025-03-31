@@ -9,6 +9,10 @@
 	border: 1px solid var(--color-gray);
 }
 
+.btn:hover{
+	filter: invert();
+}
+
 .icon {
 	height: 16px;
 	width: 16px;

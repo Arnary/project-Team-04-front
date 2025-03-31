@@ -34,7 +34,6 @@ const AddRecipeForm = () => {
     const userId = useSelector((state) => state.auth.user?.id);
     const dispatch = useDispatch();
     const categoryDropdownRef = useRef(null);
-    const categories = useSelector((state) => state.categories.list);
     const categoriesStatus = useSelector((state) => state.categories.status);
 
     const {
@@ -68,8 +67,6 @@ const AddRecipeForm = () => {
             alert("Categories are still loading, please wait");
             return;
         }
-
-        console.log("Submitting form data:", data);
 
         if (!data.category || !data.category.id) {
             alert("Please select a valid category");

@@ -40,13 +40,13 @@ const RecipeInfo = () => {
   };
 
   const switchToSignUp = () => {
-    setShowSignUp(true);
     setShowSignIn(false);
+    setShowSignUp(true);
   };
 
   const switchToSignIn = () => {
-    setShowSignIn(true);
     setShowSignUp(false);
+    setShowSignIn(true);
   };
 
   if (!recipe) {
@@ -56,49 +56,52 @@ const RecipeInfo = () => {
   return (
     <>
       <section className={styles.breadcrumbs}>
-        <PathInfo title={recipe.title} />
+        <div className={styles.container}>
+          <PathInfo title={recipe.title} />
+        </div>
       </section>
 
       <section className={styles.section}>
-        <img className={styles.image} src={recipe.thumb} alt={recipe.title} />
+        <div className={styles.container}>
+          <img className={styles.image} src={recipe.thumb} alt={recipe.title} />
 
-        <div className={styles.content}>
-          <RecipeMainInfo
-            title={recipe.title}
-            category={recipe.category || "Unknown"}
-            time={recipe.time ? `${recipe.time} min` : "N/A"}
-            description={recipe.description}
-            author={{
-              name: recipe.owner?.name || "Unknown",
-              avatar: recipe.owner?.avatar || placeholderAvatar,
-              onClick: handleAuthorClick
-            }}
-          />
+          <div className={styles.content}>
+            <RecipeMainInfo
+              title={recipe.title}
+              category={recipe.category || "Unknown"}
+              time={recipe.time ? `${recipe.time} min` : "N/A"}
+              description={recipe.description}
+              author={{
+                name: recipe.owner?.name || "Unknown",
+                avatar: recipe.owner?.avatar || placeholderAvatar,
+                onClick: handleAuthorClick
+              }}
+            />
 
-          <div className={styles.recipeLayout}>
-            <RecipeIngredients
-              ingredients={recipe.ingredients?.map(ing => ({
-                id: ing.id,
-                name: ing.name,
-                quantity: ing.measure,
-                image: ing.img,
-              })) || []}
-            />
-            <RecipePreparation
-              instructions={recipe.instructions}
-              isFavorite={false}
-              recipeId={recipe._id}
-            />
+            <div className={styles.recipeLayout}>
+              <RecipeIngredients
+                ingredients={recipe.ingredients?.map(ing => ({
+                  id: ing.id,
+                  name: ing.name,
+                  quantity: ing.measure,
+                  image: ing.img,
+                })) || []}
+              />
+              <RecipePreparation
+                instructions={recipe.instructions}
+                recipeId={recipe.id}
+              />
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Modals */}
       <SignInModal
         isOpen={showSignIn}
         onClose={() => setShowSignIn(false)}
         onSwitchToSignUp={switchToSignUp}
       />
-
       <SignUpModal
         isOpen={showSignUp}
         onClose={() => setShowSignUp(false)}

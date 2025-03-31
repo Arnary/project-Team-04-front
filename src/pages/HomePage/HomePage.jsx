@@ -40,11 +40,6 @@ const HomePage = () => {
     return (
         <>
             <Hero onAddRecipeClick={handleAddRecipeClick} />
-            <div className={css.buttons}>
-                <button onClick={() => setSignInOpen(true)}>Sign In</button>
-                <button onClick={() => setSignUpOpen(true)}>Sign Up</button>
-                <button onClick={() => setLogOutOpen(true)}>Log Out</button>
-            </div>
             <SignInModal
                 isOpen={isSignInOpen}
                 onClose={() => setSignInOpen(false)}

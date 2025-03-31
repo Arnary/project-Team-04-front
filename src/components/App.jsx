@@ -4,6 +4,7 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import AppLayout from "./AppLayout/AppLayout";
 import AddRecipePage from "../pages/AddRecipePage/AddRecipePage";
 import Footer from "./Footer/Footer";
+import Header from "./Header/Header"
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <AppLayout>
       <Suspense fallback={<div>Loading...</div>}>
+      <Header />
         <Routes>
           <Route path="/" element={<HomePage />}>
             <Route index element={<Categories />} />

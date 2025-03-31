@@ -3,7 +3,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { toast } from "react-hot-toast";
 
-import { fetchProfile, updateAvatar } from "../../redux/profile/operations";
+import {
+  fetchProfile,
+  updateAvatar,
+  fetchUserFollowing,
+  followProfile,
+  unfollowProfile,
+} from "../../redux/profile/operations";
+import { isFollowingProfile } from "../../redux/profile/profileSlice";
 import LogOutModal from "../../components/LogOutModal/LogOutModal";
 
 import style from "./ProfileInfo.module.css";
@@ -15,12 +22,17 @@ const ProfileInfo = () => {
   const status = useSelector((state) => state.profile.status);
   const profile = useSelector((state) => state.profile.selectedProfile);
   const isCurrentUser = profile?.favoriteRecipesCount !== undefined;
+  const isFollowing = useSelector(isFollowingProfile(id));
 
   useEffect(() => {
     if (id) {
       dispatch(fetchProfile(id));
     }
-  }, [id, dispatch]);
+
+    if (!isCurrentUser) {
+      dispatch(fetchUserFollowing());
+    }
+  }, [id, dispatch, isCurrentUser]);
 
   const handleAvatarChange = (event) => {
     const avatarFile = event.target.files[0];
@@ -33,6 +45,14 @@ const ProfileInfo = () => {
     formData.append("avatar", avatarFile);
 
     dispatch(updateAvatar(formData));
+  };
+
+  const handleFollowClick = () => {
+    dispatch(followProfile(id));
+  };
+
+  const handleUnfollowClick = () => {
+    dispatch(unfollowProfile(id));
   };
 
   return (
@@ -103,9 +123,23 @@ const ProfileInfo = () => {
       </div>
 
       <div className={style.actions}>
-        <button className={style.button} onClick={() => setLogOutOpen(true)}>
-          Log Out
-        </button>
+        {isCurrentUser && (
+          <button className={style.button} onClick={() => setLogOutOpen(true)}>
+            Log Out
+          </button>
+        )}
+
+        {!isCurrentUser && isFollowing && (
+          <button className={style.button} onClick={handleUnfollowClick}>
+            Following
+          </button>
+        )}
+
+        {!isCurrentUser && !isFollowing && (
+          <button className={style.button} onClick={handleFollowClick}>
+            Follow
+          </button>
+        )}
       </div>
 
       <LogOutModal isOpen={isLogOutOpen} onClose={() => setLogOutOpen(false)} />

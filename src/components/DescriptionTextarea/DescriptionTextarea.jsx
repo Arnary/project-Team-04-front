@@ -1,34 +1,26 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
+import TextareaAutosize from "react-textarea-autosize";
 import styles from "./DescriptionTextarea.module.css";
 
 const DescriptionTextarea = ({ name, label, placeholder, register, errors, watch, setValue }) => {
-    const textareaRef = useRef(null);
     const value = watch(name);
 
-    useEffect(() => {
-        const textarea = textareaRef.current;
-        if (textarea) {
-            textarea.style.height = "auto";
-            textarea.style.height = `${textarea.scrollHeight}px`;
-        }
-    }, [value]);
-
     return (
-        <div className={styles["textarea-container"]}>
+        <div className={`${styles["textarea-container"]} ${errors[name] ? styles["error"] : ""}`}>
             {label && <label className={styles["textarea-label"]}>{label}</label>}
 
-            <textarea
-                ref={textareaRef}
+            <TextareaAutosize
                 className={styles.textarea}
                 {...register(name)}
                 placeholder={placeholder}
                 maxLength={200}
+                value={value || ""}
                 onChange={(e) => setValue(name, e.target.value.slice(0, 200))}
-                rows="1"
+                minRows={1}
+                maxRows={20}
                 style={{
                     resize: "none",
                     overflow: "hidden",
-                    minHeight: "40px",
                     border: "none",
                     borderBottom: "1px solid #BFBEBE",
                     outline: "none",

@@ -5,25 +5,25 @@ import {
   addFavoriteRecipe,
   removeFromFavoriteRecipe,
 } from '../../../redux/recipes/operations';
+import { getIsAuthenticated } from "../../../redux/auth/selectors";
 import SignInModal from '../../SignInModal/SignInModal';
 import SignUpModal from '../../SignUpModal/SignUpModal';
 
 const RecipePreparation = ({ instructions, isFavorite: initialFavorite, recipeId }) => {
   const [isFavorite, setIsFavorite] = useState(initialFavorite);
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn); // має бути true, якщо користувач залогінений
+  const isAuth = useSelector(getIsAuthenticated); // фінальна перевірка авторизації
   const dispatch = useDispatch();
 
   const [isSignInOpen, setSignInOpen] = useState(false);
   const [isSignUpOpen, setSignUpOpen] = useState(false);
 
-  // Синхронізація статусу isFavorite при зміні пропса
   useEffect(() => {
     setIsFavorite(initialFavorite);
   }, [initialFavorite]);
 
   const handleFavoriteClick = async () => {
-    if (!isLoggedIn) {
-      setSignInOpen(true); // лише якщо НЕ залогінений
+    if (!isAuth) {
+      setSignInOpen(true);
       return;
     }
 
@@ -51,15 +51,14 @@ const RecipePreparation = ({ instructions, isFavorite: initialFavorite, recipeId
   };
 
   return (
-    <section className={styles.preparationSection}>
+    <div className={styles.preparationSection}>
       <h2 className={styles.title}>Recipe Preparation</h2>
       <p className={styles.instructions}>{instructions}</p>
-      
+
       <button type="button" className={styles.favoriteBtn} onClick={handleFavoriteClick}>
         {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
       </button>
 
-      {/* Модалки */}
       <SignInModal
         isOpen={isSignInOpen}
         onClose={() => setSignInOpen(false)}
@@ -70,7 +69,7 @@ const RecipePreparation = ({ instructions, isFavorite: initialFavorite, recipeId
         onClose={() => setSignUpOpen(false)}
         onSwitchToSignIn={switchToSignIn}
       />
-    </section>
+    </div>
   );
 };
 

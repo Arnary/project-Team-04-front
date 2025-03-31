@@ -12,34 +12,10 @@ const initialState = {
 		total: 0,
 		favoriteRecipes: [],
 	},
-	recipes: {
-		total: 0,
-		result: [],
-	},
 	isLoadingFavorite: false,
 	isErrorFavorite: null,
 	isLoading: false,
 	isError: null,
-	popularRecipes: [],
-	isLoadingPopular: false,
-	isErrorPopular: null,
-	recipeCreate: {
-		lastCreatedRecipe: null,
-		isLoading: false,
-		isError: null,
-	},
-	recipeDelete: {
-		isLoading: false,
-		isError: null,
-	},
-	fetchRecipes: {
-		isLoading: false,
-		isError: null,
-		result: {
-			total: 0,
-			recipes: [],
-		},
-	},
 };
 
 const favoritesSlice = createSlice({

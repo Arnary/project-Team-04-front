@@ -6,7 +6,6 @@ import RecipeList from "../RecipeList/RecipeList.jsx";
 import RecipeFilters from "../RecipeFilters/RecipeFilters.jsx";
 import categoryDescriptions from "../../constants/constants.js";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRecipesByCategory } from "../../redux/recipes/operations.js";
 import { selectArea } from '../../redux/areas/areaSlice';
 import { selectIngredient } from '../../redux/ingredients/ingredientSlice';
 import { selectCategory } from "../../redux/categories/categorySlice";
@@ -60,22 +59,6 @@ const Recipes = () => {
 
 	useEffect(() => {
 		if (selectedCategory) {
-			dispatch(fetchRecipesByCategory({
-				category: selectedCategory,
-				page: currentPage,
-				size: limit,
-			})).then(response => {
-				console.log('Server response', response);
-			});
-		}
-	}, [dispatch, selectedCategory, currentPage, limit]);
-
-	useEffect(() => {
-		setCurrentPage(1);
-	}, [selectedArea, selectedIngredient]);
-
-	useEffect(() => {
-		if (selectedCategory) {
 			dispatch(fetchRecipesByFilters({
 				category: selectedCategory,
 				area: selectedArea,
@@ -85,6 +68,10 @@ const Recipes = () => {
 			}));
 		}
 	}, [dispatch, selectedCategory, selectedArea, selectedIngredient, currentPage, limit]);
+
+	useEffect(() => {
+		setCurrentPage(1);
+	}, [selectedArea, selectedIngredient]);
 
 	const isEmptyObject = (obj) => {
 		return Object.keys(obj).length === 0 && obj.constructor === Object;
@@ -116,18 +103,22 @@ const Recipes = () => {
 				</Subtitle>
 				<div className={css["recipes-category"]}>
 					<div>
-						<RecipeFilters currentPage={currentPage} size={limit} />
+						<RecipeFilters />
 					</div>
 					<div>
 						{recipes.recipes? (
         					<RecipeList recipes={recipes.recipes} />
       					) : (
-        					<p>No recipes found for this category.</p>
-      					)}
-						<Pagination
-							currentPage={currentPage}
-							totalPages={totalPages}
-							onPageChange={handlePageChange}/>
+        					<p className={css.message}>No recipes found for this category.</p>
+						)}
+						{recipes.totalItems === 0 ?
+							(<p className={css.message}>No recipes found.</p>) : (
+							<Pagination
+								currentPage={currentPage}
+								totalPages={totalPages}
+								onPageChange={handlePageChange}/>
+							)
+						}
 					</div>
 				</div>
 			</div>

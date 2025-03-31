@@ -1,5 +1,4 @@
 .section {
-  margin: 0 auto;
   max-width: 375px;
   font-family: 'Mulish', sans-serif;
 }
@@ -10,14 +9,14 @@
   line-height: 133%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  margin: 32px 0 20px;
+  margin-bottom:20px;
   color: #050505;
 }
 
 .list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 16px;
   padding: 0;
   list-style: none;
 }
@@ -25,7 +24,7 @@
 .item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   height: 85px;
   background-color: #fff;
   box-sizing: border-box;
@@ -77,7 +76,6 @@
 
 @media screen and (min-width: 768px) {
   .section {
-    margin: 0 0 40px;
     max-width: 768px;
   }
 
@@ -114,7 +112,6 @@
 @media screen and (min-width: 1440px) {
   .section {
     max-width: 1200px;
-    margin: 0 0 60px;
   }
 
   .list {

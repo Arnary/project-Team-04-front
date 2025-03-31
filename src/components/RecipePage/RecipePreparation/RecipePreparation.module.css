@@ -5,7 +5,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .title {
@@ -14,6 +13,7 @@
   line-height: 133%;
   color: #050505;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .instructions {
@@ -22,6 +22,7 @@
   line-height: 143%;
   letter-spacing: -0.02em;
   color: #bfbebe;
+  margin-bottom: 32px;
 }
 
 .favoriteBtn {
@@ -59,6 +60,7 @@
     font-size: 16px;
     line-height: 150%;
     color: #1a1a1a;
+    margin-bottom: 40px;
   }
 
   .favoriteBtn {
@@ -70,10 +72,6 @@
 
 /* ====== Desktop (>=1440px) ====== */
 @media screen and (min-width: 1440px) {
-  .instructions {
-    font-size: 18px;
-  }
-
   .favoriteBtn {
     color: #1a1a1a;
     font-weight: 700;
